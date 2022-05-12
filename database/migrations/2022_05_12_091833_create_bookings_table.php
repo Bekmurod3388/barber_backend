@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('client_name');
-            $table->varchar('client_phone_number');
+            $table->string('client_phone_number');
             $table->integer('barber_id');
-            $table->dateTime();
+            $table->date('time');
             $table->timestamps();
         });
     }

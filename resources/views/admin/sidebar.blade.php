@@ -23,6 +23,12 @@
                         <p>Servis</p>
                     </a>
                 </li>
+                <li class="nav-item {{  request()->routeIs('admin.bookings.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.bookings.index')}}">
+                        <i class="fas fa-cog"></i>
+                        <p>Booking</p>
+                    </a>
+                </li>
                 <li class="nav-item {{  request()->routeIs('admin.product.index') ? 'active' : '' }}">
                     <a href="">
                         <i class="fas fa-project-diagram"></i>

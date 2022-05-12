@@ -4,13 +4,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Services</h1></div>
+                    <div class="col-9"><h1 class="card-title">Bookings</h1></div>
                     <div class="col-md-1">
-                        <a class="btn btn-primary" href="{{route('admin.services.create')}}">
+                        <a class="btn btn-primary" href="{{route('admin.bookings.create')}}">
                             <span class="btn-label">
+{{--                                admin.bookings.index--}}
                                 <i class="fa fa-plus"></i>
                             </span>
-                            Servis qoshish
+                           Client qoshish
                         </a>
                     </div>
                 </div>
@@ -20,39 +21,46 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Services name</th>
-                            <th class="" scope="col">Cost</th>
-                            <th class="w-25" scope="col">barber Id</th>
+                            <th class="" scope="col">Client name</th>
+                            <th class="" scope="col">Clinet phone number</th>
+                            <th class="" scope="col">barber Id</th>
+                            <th class="" scope="col">Time</th>
+                            <th class="" scope="col">created_at</th>
+
+
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($services as $servic)
+                        @foreach($bookings as $booking)
                             <tr>
-                                <th scope="row" class="col-1">{{$servic->id}}</th>
-                                <td>{{$servic->services_name}}</td>
-                                <td>{{$servic->cost}}</td>
-                                <td>{{$servic->barber_id}}</td>
+                                <th scope="row" class="col-1">{{$booking->id}}</th>
+                                <td>{{$booking->client_name}}</td>
+                                <td>{{$booking->client_phone_number}}</td>
+                                <td>{{$booking->barber_id}}</td>
+                                <td>{{$booking->time}}</td>
+                                <td>{{$booking->created_at}}</td>
+
 
                                 <td class="col-2">
-                                    <form action="{{route('admin.services.destroy',$servic->id)}}" method="POST">
+                                    <form action="{{route('admin.bookings.destroy',$booking->id)}}" method="POST">
                                         <a title="Ko'rish" class="btn btn-primary btn-sm active"
-                                           href="{{route('admin.services.show',$servic->id)}}">
+                                           href="{{route('admin.bookings.show',$booking->id)}}">
                                     <span class="btn-label">
                                         <i class="fa fa-eye"></i>
                                     </span>
 
                                         </a>
                                         <a title="Tahrirlash" class="btn btn-warning btn-sm active"
-                                           href="{{route('admin.services.edit',$servic->id)}}">
+                                           href="{{route('admin.bookings.edit',$booking->id)}}">
                                     <span class="btn-label">
-
 <i class="fa fa-pen"></i>
+
                                     </span>
 
                                         </a>
-                                        <a href="{{url('services',$servic->id)}}">
+                                        <a href="{{url('bookings',$booking->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <button title="O'chirish" type="submit"
