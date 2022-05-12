@@ -47,7 +47,8 @@
                                         <a title="Tahrirlash" class="btn btn-warning btn-sm active"
                                            href="{{route('admin.services.edit',$servic->id)}}">
                                     <span class="btn-label">
-                                        <i class="fa fa-pen"></i>
+
+
                                     </span>
 
                                         </a>
