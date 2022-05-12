@@ -16,6 +16,13 @@
                         <p>Sartaroshlar</p>
                     </a>
                 </li>
+                <li class="nav-item {{  request()->routeIs('admin.services.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.services.index')}}">
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
+
+                        <p>Servis</p>
+                    </a>
+                </li>
                 <li class="nav-item {{  request()->routeIs('admin.product.index') ? 'active' : '' }}">
                     <a href="">
                         <i class="fas fa-project-diagram"></i>
