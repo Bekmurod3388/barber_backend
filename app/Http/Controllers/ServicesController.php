@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barber;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -77,8 +78,11 @@ class ServicesController extends Controller
     {
 //        dd($services->id);
         $services = Services::find($id);
-
-        return view('admin.services.edit', compact('services'));
+        $barbers = Barber::all();
+        return view('admin.services.edit', [
+            'services'=>$services,
+            'barbers'=>$barbers,
+        ]);
     }
 
     /**
