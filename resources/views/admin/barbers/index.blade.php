@@ -23,9 +23,9 @@
                             <th class="" scope="col">#</th>
                             <th class="" scope="col">Barber Name</th>
                             <th class="" scope="col">Barber Phone Number</th>
-                            <th class="" scope="col">Passport Number</th>
+                            <th class="" scope="col">Barber Adress</th>
+                            <th class="" scope="col">Passport</th>
                             <th class="" scope="col">Work Time</th>
-                            <th class="" scope="col">created_at</th>
 
 
 
@@ -40,7 +40,7 @@
                                 <td>{{$barber->barber_phone_number}}</td>
                                 <td>{{$barber->barber_home_adress}}</td>
                                 <td>{{$barber->passport_number}}</td>
-                                <td>{{$barber->work_time}}}</td>
+                                <td>{{$barber->work_time}}</td>
                                 <td>{{$barber->created_at}}</td>
 
 
