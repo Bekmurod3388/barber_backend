@@ -4,14 +4,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Bookings</h1></div>
+                    <div class="col-9"><h1 class="card-title">Barber</h1></div>
                     <div class="col-md-1">
-                        <a class="btn btn-primary" href="{{route('admin.bookings.create')}}">
+                        <a class="btn btn-primary" href="{{route('admin.barber.create')}}">
                             <span class="btn-label">
 {{--                                admin.bookings.index--}}
                                 <i class="fa fa-plus"></i>
                             </span>
-                           Client qoshish
+                           Sartaroshlar qo'shish
                         </a>
                     </div>
                 </div>
@@ -21,46 +21,44 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Client name</th>
-                            <th class="" scope="col">Clinet phone number</th>
-                            <th class="" scope="col">barber Id</th>
-                            <th class="" scope="col">Time</th>
-                            <th class="" scope="col">created_at</th>
-
-
-
+                            <th class="" scope="col">Barber Name</th>
+                            <th class="" scope="col">Barber Phone Number</th>
+                            <th class="" scope="col">Barber Adress</th>
+                            <th class="" scope="col">Passport</th>
+                            <th class="" scope="col">Work Time</th>
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($bookings as $booking)
+                        @foreach($barbers as $barber)
                             <tr>
-                                <th scope="row" class="col-1">{{$booking->id}}</th>
-                                <td>{{$booking->client_name}}</td>
-                                <td>{{$booking->client_phone_number}}</td>
-                                <td>{{$booking->barber_id}}</td>
-                                <td>{{$booking->time}}</td>
-                                <td>{{$booking->created_at}}</td>
+                                <th scope="row" class="col-1">{{$barber->id}}</th>
+                                <td>{{$barber->barber_name}}</td>
+                                <td>{{$barber->barber_phone_number}}</td>
+                                <td>{{$barber->barber_home_adress}}</td>
+                                <td>{{$barber->passport_number}}</td>
+                                <td>{{$barber->work_time}}</td>
+{{--                                <td>{{$barber->created_at}}</td>--}}
 
 
                                 <td class="col-2">
-                                    <form action="{{route('admin.bookings.destroy',$booking->id)}}" method="POST">
+                                    <form action="{{route('admin.barber.destroy',$barber->id)}}" method="POST">
                                         <a title="Ko'rish" class="btn btn-primary btn-sm active"
-                                           href="{{route('admin.bookings.show',$booking->id)}}">
+                                           href="{{route('admin.barber.show',$barber->id)}}">
                                     <span class="btn-label">
                                         <i class="fa fa-eye"></i>
                                     </span>
 
                                         </a>
                                         <a title="Tahrirlash" class="btn btn-warning btn-sm active"
-                                           href="{{route('admin.bookings.edit',$booking->id)}}">
+                                           href="{{route('admin.barber.edit',$barber->id)}}">
                                     <span class="btn-label">
                                         <i class="fa fa-pen"></i>
 
                                     </span>
 
                                         </a>
-                                        <a href="{{url('bookings',$booking->id)}}">
+                                        <a href="{{url('barber',$barber->id)}}">
                                             @csrf
                                             @method('DELETE')
                                             <button title="O'chirish" type="submit"

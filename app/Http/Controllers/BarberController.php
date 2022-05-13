@@ -3,82 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Barber;
+use function GuzzleHttp\Promise\all;
 
 class BarberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $barbers = Barber::all();
+        return view ('admin.barbers.index')->with('barbers', $barbers);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('admin.barbers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Barber::create($input);
+        return redirect()->route('admin.barber.index')->with('flash_message', 'Barbers Addedd!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $barbers = Barber::find($id);
+        return view('admin.barbers.show')->with('barbers', $barbers);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $barbers = Barber::find($id);
+        return view('admin.barbers.edit')->with('barbers', $barbers);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $barbers = Barber::find($id);
+        $input = $request->all();
+        $barbers->update($input);
+        return redirect('admin.barbers')->with('flash_message', 'barbers Updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Barber::destroy($id);
+        return redirect('admin.barbers')->with('flash_message', 'Barbers deleted!');
     }
 }
