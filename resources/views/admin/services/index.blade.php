@@ -29,40 +29,45 @@
                         </thead>
                         <tbody>
                         @foreach($services as $servic)
-                            <tr>
-                                <th scope="row" class="col-1">{{$servic->id}}</th>
-                                <td>{{$servic->services_name}}</td>
-                                <td>{{$servic->cost}}</td>
-                                <td>{{$servic->barber_id}}</td>
+                            @foreach($barbers as $barber)
+                                @if($servic->barber_id == $barber->id)
+                                    <tr>
+                                        <th scope="row" class="col-1">{{$servic->id}}</th>
+                                        <td>{{$servic->services_name}}</td>
+                                        <td>{{$servic->cost}}</td>
+                                        <td>{{$barber->barber_name}}</td>
 
-                                <td class="col-2">
-                                    <form action="{{route('admin.services.destroy',$servic->id)}}" method="POST">
-                                        <a title="Ko'rish" class="btn btn-primary btn-sm active"
-                                           href="{{route('admin.services.show',$servic->id)}}">
+                                        <td class="col-2">
+                                            <form action="{{route('admin.services.destroy',$servic->id)}}"
+                                                  method="POST">
+                                                <a title="Ko'rish" class="btn btn-primary btn-sm active"
+                                                   href="{{route('admin.services.show',$servic->id)}}">
                                     <span class="btn-label">
                                         <i class="fa fa-eye"></i>
                                     </span>
 
-                                        </a>
-                                        <a title="Tahrirlash" class="btn btn-warning btn-sm active"
-                                           href="{{route('admin.services.edit',$servic->id)}}">
+                                                </a>
+                                                <a title="Tahrirlash" class="btn btn-warning btn-sm active"
+                                                   href="{{route('admin.services.edit',$servic->id)}}">
                                     <span class="btn-label">
-
-<i class="fa fa-pen"></i>
+                                        <i class="fa fa-pen"></i>
                                     </span>
 
-                                        </a>
-                                        <a href="{{url('services',$servic->id)}}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button title="O'chirish" type="submit"
-                                                    class="btn btn-danger active btn-sm"><span class="btn-label">
+                                                </a>
+                                                <a href="{{url('services',$servic->id)}}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button title="O'chirish" type="submit"
+                                                            class="btn btn-danger active btn-sm"><span
+                                                            class="btn-label">
                                         <i class="fa fa-trash"></i>
                                     </span></button>
-                                        </a>
-                                    </form>
-                                </td>
-                            </tr>
+                                                </a>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
                         @endforeach
 
                         </tbody>

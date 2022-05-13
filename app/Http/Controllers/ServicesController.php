@@ -16,8 +16,10 @@ class ServicesController extends Controller
     public function index()
     {
         $servic = Services::OrderBy('id', 'DESC')->get();
+        $barbers = Barber::all();
         return view('admin.services.index', [
-            'services' => $servic
+            'services' => $servic,
+            'barbers'=>$barbers,
         ]);
     }
 
@@ -42,16 +44,12 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        $services = new Services();
-        $services->services_name = $request->services_name;
-        $services->cost = $request->cost;
-        $services->barber_id = $request->barber_id;
-        $services->save();
         $request->validate([
             'services_name' => 'required',
             'cost' => 'required',
             'barber_id' => 'required'
         ]);
+
         Services::create($request->all());
         return redirect()->route('admin.services.index');
     }
@@ -120,4 +118,5 @@ $services->save();
         $service->delete();
         return redirect()->route('admin.services.index');
     }
+
 }
