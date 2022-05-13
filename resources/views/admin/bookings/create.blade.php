@@ -34,14 +34,19 @@
                             <label for="cost">Client phone</label>
                             <input type="tel" name="client_phone_number" class="form-control" id="cost" placeholder="+99890000000">
                         </div>
+
                         <div class="form-group">
-                            <label for="header_ru">barber ID</label>
-                            <input type="text" name="barber_id" class="form-control" id="header_ru" placeholder="id">
-                        </div> <div class="form-group">
+                            <select name="barber_id" required class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="building">
+                                <option value="0" selected> Sartarosh </option>
+                                @foreach($barbers as $barber)
+                                    <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                             <label for="header_ru">Time</label>
                             <input type="date" name="time" class="form-control" id="header_ru" placeholder="time">
                         </div>
-
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">

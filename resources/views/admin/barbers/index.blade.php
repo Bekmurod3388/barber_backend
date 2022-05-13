@@ -26,9 +26,6 @@
                             <th class="" scope="col">Passport Number</th>
                             <th class="" scope="col">Work Time</th>
                             <th class="" scope="col">created_at</th>
-
-
-
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
@@ -38,11 +35,9 @@
                                 <th scope="row" class="col-1">{{$barber->id}}</th>
                                 <td>{{$barber->barber_name}}</td>
                                 <td>{{$barber->barber_phone_number}}</td>
-                                <td>{{$barber->barber_home_adress}}</td>
                                 <td>{{$barber->passport_number}}</td>
-                                <td>{{$barber->work_time}}}</td>
+                                <td>{{$barber->work_time}}</td>
                                 <td>{{$barber->created_at}}</td>
-
 
                                 <td class="col-2">
                                     <form action="{{route('admin.barber.destroy',$barber->id)}}" method="POST">

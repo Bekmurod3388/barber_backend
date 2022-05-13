@@ -22,6 +22,10 @@
                             <th>Date</th>
                             <td>{{$bookings->time}}</td>
                         </tr>
+                        <tr>
+                            <th>created_at</th>
+                            <td>{{$bookings->created_at}}</td>
+                        </tr>
 
 {{--                        <tr>--}}
 {{--                            <th>Xonadoshlari</th>--}}

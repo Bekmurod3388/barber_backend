@@ -20,9 +20,9 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Services name</th>
-                            <th class="" scope="col">Cost</th>
-                            <th class="w-25" scope="col">barber Id</th>
+                            <th class="" scope="col">Xizmat nomi</th>
+                            <th class="" scope="col">Naxri</th>
+                            <th class="w-25" scope="col">Sartarosh</th>
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>

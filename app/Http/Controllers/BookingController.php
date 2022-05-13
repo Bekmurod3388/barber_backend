@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barber;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+         $bookings = Booking::all();
+         return view('admin.bookings.index',[
+             'bookings'=>$bookings,
+         ]);
     }
 
     /**
@@ -24,7 +28,10 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $barbers = Barber::all();
+        return view('admin.bookings.create',[
+            'barbers'=>$barbers,
+        ]);
     }
 
     /**
@@ -35,7 +42,16 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $booking = new Booking();
+        $booking->client_name = $request->client_name;
+        $booking->client_phone_number = $request->client_phone_number;
+        $booking->barber_id = $request->barber_id;
+        $booking->time = $request->time;
+        $booking->save();
+
+        return redirect(route('admin.bookings.index'));
+
     }
 
     /**
@@ -44,9 +60,13 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        //
+        $booking = Booking::find($id);
+
+        return view('admin.bookings.show',[
+            'bookings'=>$booking,
+        ]);
     }
 
     /**
@@ -55,9 +75,16 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit( $id )
     {
-        //
+        $booking = Booking::find($id);
+        $barbers = Barber::all();
+
+        return view('admin.bookings.edit',[
+            'bookings'=>$booking,
+            'barbers'=>$barbers,
+        ]);
+
     }
 
     /**
@@ -67,9 +94,17 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, $id )
     {
-        //
+        $booking = Booking::find($id);
+
+        $booking->client_name = $request->client_name;
+        $booking->client_phone_number = $request->client_phone_number;
+        $booking->barber_id = $request->barber_id;
+        $booking->time = $request->time;
+        $booking->save();
+
+        return redirect(route('admin.bookings.index'));
     }
 
     /**
@@ -78,8 +113,11 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy( $id )
     {
-        //
+        $booking = Booking::find($id);
+        $booking -> delete();
+        return redirect(route('admin.bookings.index'));
+
     }
 }

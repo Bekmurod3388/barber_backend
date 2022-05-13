@@ -32,9 +32,14 @@
                             <label for="cost">Cost</label>
                             <input type="number" name="cost" class="form-control" id="cost" placeholder="cost">
                         </div>
+
                         <div class="form-group">
-                            <label for="header_ru">barber ID</label>
-                            <input type="text" name="barber_id" class="form-control" id="header_ru" placeholder="id">
+                            <select name="barber_id" required class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="building">
+                                <option value="0" selected> Sartarosh </option>
+                                @foreach($barbers as $barber)
+                                    <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>

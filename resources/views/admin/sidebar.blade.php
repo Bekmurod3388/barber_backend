@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-primary">
                 <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-user"></i>
                         <p>Foydalanuvchilar</p>
                     </a>
@@ -19,7 +19,6 @@
                 <li class="nav-item {{  request()->routeIs('admin.services.index') ? 'active' : '' }}">
                     <a href="{{route('admin.services.index')}}">
                         <i class="fa fa-address-book" aria-hidden="true"></i>
-
                         <p>Servis</p>
                     </a>
                 </li>
@@ -30,13 +29,13 @@
                     </a>
                 </li>
                 <li class="nav-item {{  request()->routeIs('admin.product.index') ? 'active' : '' }}">
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-project-diagram"></i>
                         <p>Продукты</p>
                     </a>
                 </li>
                 <li class="nav-item {{  request()->routeIs('admin.category.index') ? 'active' : '' }}">
-                    <a href="">
+                    <a href="#">
                         <i class="fas fa-folder-open"></i>
                         <p>Категория</p>
                     </a>

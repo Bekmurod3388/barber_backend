@@ -22,12 +22,8 @@
                         <tr>
                             <th class="" scope="col">#</th>
                             <th class="" scope="col">Client name</th>
-                            <th class="" scope="col">Clinet phone number</th>
                             <th class="" scope="col">barber Id</th>
                             <th class="" scope="col">Time</th>
-                            <th class="" scope="col">created_at</th>
-
-
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
@@ -37,11 +33,8 @@
                             <tr>
                                 <th scope="row" class="col-1">{{$booking->id}}</th>
                                 <td>{{$booking->client_name}}</td>
-                                <td>{{$booking->client_phone_number}}</td>
                                 <td>{{$booking->barber_id}}</td>
                                 <td>{{$booking->time}}</td>
-                                <td>{{$booking->created_at}}</td>
-
 
                                 <td class="col-2">
                                     <form action="{{route('admin.bookings.destroy',$booking->id)}}" method="POST">

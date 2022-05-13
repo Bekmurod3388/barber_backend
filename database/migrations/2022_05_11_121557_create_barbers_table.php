@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('barbers', function (Blueprint $table) {
             $table->id();
-            $table->string('border_name');
-            $table->string('barder_phone_number');
-            $table->string('barder_home_adress');
+            $table->string('barber_name');
+            $table->string('barber_phone_number');
+            $table->string('barber_home_adress');
             $table->string('passport_number');
             $table->time('work_time');
             $table->timestamps();
