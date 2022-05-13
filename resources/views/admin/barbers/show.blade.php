@@ -8,7 +8,7 @@
                     <table class=" table table-bordered border-primary ">
                         <tr>
                             <th>Barber Name</th>
-                            <td>{{$barbers->borber_name}}</td>
+                            <td>{{$barbers->barber_name}}</td>
                         </tr>
                         <tr>
                             <th>Barber phone number</th>
@@ -25,6 +25,10 @@
                         <tr>
                             <th>Time</th>
                             <td>{{$barbers->work_time}}</td>
+                        </tr>
+                        <tr>
+                            <th>Kiritildi</th>
+                            <td>{{$barbers->created_at}}</td>
                         </tr>
 
 {{--                        <tr>--}}

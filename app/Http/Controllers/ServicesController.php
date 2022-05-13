@@ -28,7 +28,10 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        $barbers = Barber::all();
+        return view('admin.services.create',[
+            'barbers'=>$barbers,
+        ]);
     }
 
     /**
