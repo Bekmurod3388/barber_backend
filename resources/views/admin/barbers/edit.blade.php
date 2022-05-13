@@ -41,8 +41,8 @@
                             <input type="taxt" name="passport_number" value="{{$barbers->passport_number}}" class="form-control" id="header_ru" placeholder="AA 0000000">
                         </div>
                         <div class="form-group">
-                            <label for="header_ru">Date</label>
-                            <input type="date" name="work_time" value="{{$barbers->work_time}}" class="form-control" id="header_ru" placeholder="Wort Time">
+                            <label for="header_ru">Work time</label>
+                            <input type="time" name="work_time" value="{{$barbers->work_time}}" class="form-control" id="header_ru" placeholder="Wort Time">
                         </div>
 
 

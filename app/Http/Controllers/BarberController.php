@@ -23,7 +23,7 @@ class BarberController extends Controller
     {
         $input = $request->all();
         Barber::create($input);
-        return redirect()->route('admin.barber.index')->with('flash_message', 'Barbers Addedd!');
+        return redirect(route('admin.barber.index'))->with('flash_message', 'Barbers Addedd!');
     }
 
     public function show($id)
@@ -43,12 +43,13 @@ class BarberController extends Controller
         $barbers = Barber::find($id);
         $input = $request->all();
         $barbers->update($input);
-        return redirect('admin.barbers')->with('flash_message', 'barbers Updated!');
+        return redirect(route('admin.barber.index'));
     }
 
     public function destroy($id)
     {
         Barber::destroy($id);
-        return redirect('admin.barbers')->with('flash_message', 'Barbers deleted!');
+        return redirect(route('admin.barber.index'));
+
     }
 }
