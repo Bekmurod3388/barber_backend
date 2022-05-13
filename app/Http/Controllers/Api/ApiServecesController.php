@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApiServecesRequest;
+use App\Http\Resources\ApiServecesResource;
 use App\Models\Services;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class ApiServecesController extends Controller
@@ -15,7 +18,7 @@ class ApiServecesController extends Controller
      */
     public function index()
     {
-        return Services::all();
+        return  Services::all();
     }
 
     /**
@@ -24,9 +27,9 @@ class ApiServecesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ApiServecesRequest $request)
     {
-        $serves = Services::create($request->all());
+        $serves = Services::create($request->validate());
     }
 
     /**
@@ -37,7 +40,8 @@ class ApiServecesController extends Controller
      */
     public function show($id)
     {
-        return Services::findOrFail($id);
+        return new ApiServecesResource(Services::findOrFail($id));
+//        return new ApiServecesResource($services);
     }
 
     /**
@@ -47,9 +51,10 @@ class ApiServecesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ApiServecesRequest $request, Services $services)
     {
-        //
+        $services ->update($request->validate());
+        return $services;
     }
 
     /**
@@ -58,8 +63,9 @@ class ApiServecesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Services $services)
     {
-        //
+        $services->delete();
+        return response(null, \Illuminate\Http\Response::HTTP_NO_CONTENT);
     }
 }
