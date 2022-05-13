@@ -33,12 +33,12 @@
                             <input type="tel" name="barber_phone_number" value="{{$barbers->barber_phone_number}}" class="form-control" id="header_ru" placeholder="Barber Phone">
                         </div>
                         <div class="form-group">
-                            <label for="header_ru">Id</label>
+                            <label for="header_ru">Home Adres</label>
                             <input type="text" name="barber_home_adress" value="{{$barbers->barber_home_adress}}" class="form-control" id="header_ru" placeholder="Hom Adress">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Passport Number</label>
-                            <input type="date" name="passport_number" value="{{$barbers->passport_number}}" class="form-control" id="header_ru" placeholder="AA 0000000">
+                            <input type="taxt" name="passport_number" value="{{$barbers->passport_number}}" class="form-control" id="header_ru" placeholder="AA 0000000">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Date</label>

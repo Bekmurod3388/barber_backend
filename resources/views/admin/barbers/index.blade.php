@@ -26,9 +26,6 @@
                             <th class="" scope="col">Barber Adress</th>
                             <th class="" scope="col">Passport</th>
                             <th class="" scope="col">Work Time</th>
-
-
-
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
                         </thead>
@@ -41,7 +38,7 @@
                                 <td>{{$barber->barber_home_adress}}</td>
                                 <td>{{$barber->passport_number}}</td>
                                 <td>{{$barber->work_time}}</td>
-                                <td>{{$barber->created_at}}</td>
+{{--                                <td>{{$barber->created_at}}</td>--}}
 
 
                                 <td class="col-2">
