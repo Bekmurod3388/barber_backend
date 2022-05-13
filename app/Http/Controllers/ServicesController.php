@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barber;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,11 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+           $barber=Barber::wher('barber_id')->get;
+           dd($barber);
+        return view('admin.services.create',[
+            'barbers'=>$barber
+        ]);
     }
 
     /**
