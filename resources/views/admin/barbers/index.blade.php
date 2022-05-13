@@ -1,50 +1,92 @@
-
-@extends('students.layout')
+@extends('admin.master')
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Laravel 9 Crud</h2>
-                    </div>
-                    <div class="card-body">
-                        <a href="{{ url('/barber/create') }}" class="btn btn-success btn-sm" title="Add New Barber">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-9"><h1 class="card-title">Barber</h1></div>
+                    <div class="col-md-1">
+                        <a class="btn btn-primary" href="{{route('admin.barber.create')}}">
+                            <span class="btn-label">
+{{--                                admin.bookings.index--}}
+                                <i class="fa fa-plus"></i>
+                            </span>
+                           Sartaroshlar qo'shish
                         </a>
-                        <br/>
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Mobile</th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($barbers as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->address }}</td>
-                                        <td>{{ $item->mobile }}</td>
-                                        <td>
-                                            <a href="{{ url('/barber/' . $item->id) }}" title="View Barber"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/barber/' . $item->id . '/edit') }}" title="Edit Barber"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <form method="POST" action="{{ url('/barber' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Student"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                        <tr>
+                            <th class="" scope="col">#</th>
+                            <th class="" scope="col">Barber Name</th>
+                            <th class="" scope="col">Barber Phone Number</th>
+                            <th class="" scope="col">Passport Number</th>
+                            <th class="" scope="col">Work Time</th>
+                            <th class="" scope="col">created_at</th>
+
+
+
+                            <th class="w-25" scope="col">Amallar</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($barbers as $barber)
+                            <tr>
+                                <th scope="row" class="col-1">{{$barber->id}}</th>
+                                <td>{{$barber->barber_name}}</td>
+                                <td>{{$barber->barber_phone_number}}</td>
+                                <td>{{$barber->barber_home_adress}}</td>
+                                <td>{{$barber->passport_number}}</td>
+                                <td>{{$barber->work_time}}}</td>
+                                <td>{{$barber->created_at}}</td>
+
+
+                                <td class="col-2">
+                                    <form action="{{route('admin.barber.destroy',$barber->id)}}" method="POST">
+                                        <a title="Ko'rish" class="btn btn-primary btn-sm active"
+                                           href="{{route('admin.barber.show',$barber->id)}}">
+                                    <span class="btn-label">
+                                        <i class="fa fa-eye"></i>
+                                    </span>
+
+                                        </a>
+                                        <a title="Tahrirlash" class="btn btn-warning btn-sm active"
+                                           href="{{route('admin.barber.edit',$barber->id)}}">
+                                    <span class="btn-label">
+                                        <i class="fa fa-pen"></i>
+
+                                    </span>
+
+                                        </a>
+                                        <a href="{{url('barber',$barber->id)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button title="O'chirish" type="submit"
+                                                    class="btn btn-danger active btn-sm"><span class="btn-label">
+                                        <i class="fa fa-trash"></i>
+                                    </span></button>
+                                        </a>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                    <div class="container">
+                        <div class="row justify-content-center">
+
+
+                            {{--                            @if ($posts->links())--}}
+                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
+                            {{--                                    {{ $posts->links() }}--}}
+                            {{--                                </div>--}}
+                            {{--                            @endif--}}
+
+
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
-use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -15,10 +14,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $booking=Booking::Orderby('id','desc')->get();
-        return view('admin.bookings.index',[
-            'bookings'=>$booking
-        ]);
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('admin.bookings.create');
+        //
     }
 
     /**
@@ -39,20 +35,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'client_name'=>'required',
-            'client_phone_number'=>['required','numeric',new PhoneNumber],
-            'barber_id'=>'required',
-            'time'=>'required'
-        ]);
-        $booking=new Booking();
-        $booking->client_name=$request->client_name;
-        $booking->client_phone_number=$request->client_phone_number;
-        $booking->barber_id=$request->barber_id;
-        $booking->time=$request->time;
-        $booking->save();
-
-    return redirect(route('admin.bookings.index'));
+        //
     }
 
     /**
@@ -61,10 +44,9 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Booking $booking)
     {
-        $booking=Booking::findOr($id);
-         return view('admin.bookings.show',['bookings'=>$booking]);
+        //
     }
 
     /**
@@ -73,31 +55,21 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
-        $bookings = Booking::find($id);
-
-        return view('admin.bookings.edit', compact('bookings'));
+        //
     }
 
-
-
-    public function update(Request $request,$id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Booking  $booking
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Booking $booking)
     {
-        $request->validate([
-        'client_name'=>'required',
-        'client_phone_number'=>['required','numeric',new PhoneNumber],
-        'barber_id'=>'required',
-        'time'=>'required'
-    ]);
-        $booking=Booking::findor($id);
-        $booking->client_name=$request->client_name;
-        $booking->client_phone_number=$request->client_phone_number;
-        $booking->barber_id=$request->barber_id;
-        $booking->time=$request->time;
-        $booking->save();
-        return redirect(route('admin.bookings.index'));
-
+        //
     }
 
     /**
@@ -106,10 +78,8 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $booking)
     {
-        $booking=Booking::findor($id);
-        $booking->delete();
-        return redirect()->route('admin.bookings.index');
+        //
     }
 }

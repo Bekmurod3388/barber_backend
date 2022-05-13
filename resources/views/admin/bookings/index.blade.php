@@ -55,7 +55,7 @@
                                         <a title="Tahrirlash" class="btn btn-warning btn-sm active"
                                            href="{{route('admin.bookings.edit',$booking->id)}}">
                                     <span class="btn-label">
-<i class="fa fa-pen"></i>
+                                        <i class="fa fa-pen"></i>
 
                                     </span>
 

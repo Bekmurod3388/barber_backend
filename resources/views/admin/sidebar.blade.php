@@ -10,8 +10,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{  request()->routeIs('admin.solution.index') ? 'active' : '' }}">
-                    <a href="#">
+                <li class="nav-item {{  request()->routeIs('admin.barber.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.barber.index')}}">
                         <i class="fas fa-cog"></i>
                         <p>Sartaroshlar</p>
                     </a>
