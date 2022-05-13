@@ -23,7 +23,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //    Route::resource('users', App\Http\Controllers\UserController::class);
     Route::resource('services', App\Http\Controllers\ServicesController::class);
-//    Route::resource('rooms', App\Http\Controllers\RoomController::class);
+    Route::resource('contact_as', App\Http\Controllers\ContactAsController::class);
     Route::resource('bookings', App\Http\Controllers\BookingController::class);
     Route::resource('barber', App\Http\Controllers\BarberController::class);
 //    Route::resource('facultets', App\Http\Controllers\FacultetController::class);

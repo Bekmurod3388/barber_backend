@@ -13,24 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
+        Schema::create('contact_as', function (Blueprint $table) {
             $table->id();
-            $table->string('client_name');
-            $table->text('client_phone_number');
-            $table->integer('barber_id');
-            $table->date('time');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('email');
+            $table->float('lattitude');
+            $table->float('longitude');
             $table->timestamps();
         });
     }
 
     /**
-     *
      * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('contact_as');
     }
 };

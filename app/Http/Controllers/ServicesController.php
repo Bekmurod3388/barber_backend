@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barber;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -28,10 +27,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        $barbers = Barber::all();
-        return view('admin.services.create',[
-            'barbers'=>$barbers,
-        ]);
+        return view('admin.services.create');
     }
 
     /**
@@ -81,12 +77,8 @@ class ServicesController extends Controller
     {
 //        dd($services->id);
         $services = Services::find($id);
-        $barbers = Barber::all();
 
-        return view('admin.services.edit', [
-            'services' => $services,
-            'barbers'=>$barbers,
-        ]);
+        return view('admin.services.edit', compact('services'));
     }
 
     /**
@@ -104,11 +96,11 @@ class ServicesController extends Controller
             'barber_id'=>'required'
         ]);
 //        dd($request->);
-        $services=Services::find($id);
-        $services->services_name=$request->services_name;
-        $services->cost=$request->cost;
-        $services->barber_id=$request->barber_id;
-        $services->save();
+$services=Services::find($id);
+$services->services_name=$request->services_name;
+$services->cost=$request->cost;
+$services->barber_id=$request->barber_id;
+$services->save();
 
 //        $services->update($request->all());
         return  redirect(route('admin.services.index'));
