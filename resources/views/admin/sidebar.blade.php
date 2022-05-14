@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-primary">
                 <li class="nav-item {{  request()->routeIs('admin.users.index') ? 'active' : '' }}">
-                    <a href="#">
+                    <a href="">
                         <i class="fas fa-user"></i>
                         <p>Foydalanuvchilar</p>
                     </a>
@@ -19,31 +19,32 @@
                 <li class="nav-item {{  request()->routeIs('admin.services.index') ? 'active' : '' }}">
                     <a href="{{route('admin.services.index')}}">
                         <i class="fa fa-address-book" aria-hidden="true"></i>
+
                         <p>Servis</p>
                     </a>
                 </li>
                 <li class="nav-item {{  request()->routeIs('admin.bookings.index') ? 'active' : '' }}">
                     <a href="{{route('admin.bookings.index')}}">
-                        <i class="fas fa-cog"></i>
+                        <i class="bi bi-journal-text"></i>
                         <p>Booking</p>
                     </a>
                 </li>
-                <li class="nav-item {{  request()->routeIs('admin.contact_as.index') ? 'active' : '' }}">
-                    <a href="{{route('admin.contact_as.index')}}">
-                        <i class="fas fa-cog"></i>
-                        <p>Contact as</p>
-                    </a>
-                </li>
-                <li class="nav-item {{  request()->routeIs('admin.product.index') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-project-diagram"></i>
-                        <p>Продукты</p>
+                <li class="nav-item {{request()->routeIs('admin.photo.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.photo.index')}}">
+                        <i class="fas flaticon-photo-camera"></i>
+                        <p>Photo</p>
                     </a>
                 </li>
                 <li class="nav-item {{  request()->routeIs('admin.category.index') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-folder-open"></i>
-                        <p>Категория</p>
+                    <a href="">
+                        <i class="fas fa-video"></i>
+                        <p>Video</p>
+                    </a>
+                </li>
+                <li class="nav-item {{  request()->routeIs('admin.category.index') ? 'active' : '' }}">
+                    <a href="">
+                        <i class="bi bi-card-list"></i>
+                        <p>Sertifikat</p>
                     </a>
                 </li>
             </ul>
