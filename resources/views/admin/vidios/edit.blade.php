@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Rasmni Tahrirlash</h1></div>
+                    <div class="col-10"><h1 class="card-title">Videoni Tahrirlash</h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
@@ -26,13 +26,13 @@
                         @method('PUT')
                         @csrf
                         <div class="form-group">
-                            <label for="header_ru">Photo name</label>
+                            <label for="header_ru">Video name</label>
                             <input type="text" value="{{$data->name}}" name="name" class="form-control"
                                    id="header_ru" placeholder="">
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Vidio_old</label><br>
+                            <label for="header_ru">Video_old</label><br>
                             <iframe width="300" height="150" src="{{$data->url}}" title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Vidio new Url</label>
+                            <label for="header_ru">Video new Url</label>
                             <input type="text" name="url" class="form-control" id="header_ru" placeholder=" ">
                         </div>
 

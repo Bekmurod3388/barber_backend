@@ -4,13 +4,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Photo</h1></div>
+                    <div class="col-9"><h1 class="card-title">Video</h1></div>
                     <div class="col-md-1">
                         <a class="btn btn-primary" href="{{route('admin.vidios.create')}}">
                             <span class="btn-label">
                                 <i class="fa fa-plus"></i>
                             </span>
-                            Vidio qo'shish
+                            Video qo'shish
                         </a>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Vidio name</th>
-                            <th class="" scope="col">Vidio</th>
+                            <th class="" scope="col">Video name</th>
+                            <th class="" scope="col">Video</th>
                             <th class="" scope="col">Amallar</th>
 
                         </tr>

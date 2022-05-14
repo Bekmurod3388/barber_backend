@@ -40,7 +40,21 @@ class VidioController extends Controller
     public function store(Request $request)
     {
         $data = new VidoModel();
-        $data->create($request->all());
+
+        $data->name = $request->name;
+
+        $url = $request->url;
+        $youtube = "https://www.youtube.com/embed/";
+
+        for ( $i = strlen($url); $i>0; $i-- ){
+            if ($url[$i]=='/'){
+                break;
+            }
+            $youtube.=$url[$i];
+        }
+
+        $data->url = $youtube;
+        $data->save();
         return redirect(route('admin.vidios.index'));
 
     }

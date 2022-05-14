@@ -37,4 +37,5 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
+Route::resource('/api/serveces' ,   \App\Http\Controllers\Api\ApiServecesController::class );
 
