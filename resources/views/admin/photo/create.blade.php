@@ -21,11 +21,13 @@
                     @endif
 
 
-                    <form action="{{route('admin.photo.store')}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                    <form action="{{route('admin.photo.store')}}" method="POST" accept-charset="UTF-8"
+                          enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="services">Photo Name</label>
-                            <input type="text" name="photo_name" class="form-control" id="photo_name" placeholder="Photo Name">
+                            <input type="text" name="photo_name" class="form-control" id="photo_name"
+                                   placeholder="Photo Name">
                         </div>
 
 
@@ -33,7 +35,7 @@
                             <label for="cost">Photo</label>
                             <input type="file" name="photo" class="form-control" id="photo" placeholder=" ">
                         </div>
-                       <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
+                        <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
 
                         <input type="reset" class="btn btn-danger" value="Tozalash">
                     </form>

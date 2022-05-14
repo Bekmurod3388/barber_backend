@@ -21,23 +21,27 @@
                     @endif
 
 
-                    <form action="{{route('admin.photo.update',$data->id)}}" method="POST" accept-charset="UTF-8"
+                    <form action="{{route('admin.vidios.update',$data->id)}}" method="POST" accept-charset="UTF-8"
                           enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <div class="form-group">
                             <label for="header_ru">Photo name</label>
-                            <input type="text" value="{{$data->name}}" name="photo_name" class="form-control"
+                            <input type="text" value="{{$data->name}}" name="name" class="form-control"
                                    id="header_ru" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="header_ru">Photo_old</label><br>
-                            <img style="width: 150px; height: 150px;" src="/photo/{{$data->url}}" alt="">
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Photo</label>
-                            <input type="file" name="photo" class="form-control" id="header_ru" placeholder=" ">
+                            <label for="header_ru">Vidio_old</label><br>
+                            <iframe width="300" height="150" src="{{$data->url}}" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="header_ru">Vidio new Url</label>
+                            <input type="text" name="url" class="form-control" id="header_ru" placeholder=" ">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
