@@ -1,4 +1,3 @@
-
 <div class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
@@ -35,8 +34,8 @@
                         <p>Photo</p>
                     </a>
                 </li>
-                <li class="nav-item {{  request()->routeIs('admin.category.index') ? 'active' : '' }}">
-                    <a href="">
+                <li class="nav-item {{  request()->routeIs('admin.vidios.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.vidios.index')}}">
                         <i class="fas fa-video"></i>
                         <p>Video</p>
                     </a>

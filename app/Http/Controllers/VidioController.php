@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
-use App\Models\Services;
+use App\Models\VidoModel;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class VidioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-
-        $data = Photo::OrderBy('id', 'DESC')->get();
-        return view('admin.photo.index', [
+        $data = VidoModel::OrderBy('id', 'DESC')->get();
+        return view('admin.vidios.index', [
             'data' => $data
         ]);
     }
@@ -29,7 +28,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        return view('admin.photo.create');
+        return view('admin.vidios.create');
     }
 
     /**
@@ -40,15 +39,10 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Photo();
+        $data = new VidoModel();
+        $data->create($request->all());
+        return redirect(route('admin.vidios.index'));
 
-        $data->name = $request->photo_name;
-        $rasm = $request->photo;
-        $rasmname = time() . '.' . $rasm->getClientOriginalExtension();
-        $request->photo->move('photo', $rasmname);
-        $data->url = $rasmname;
-        $data->save();
-        return redirect(route('admin.photo.index'));
     }
 
     /**
@@ -59,10 +53,7 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        $photo = Photo::find($id);
-        return view('admin.photo.show', [
-            'photo' => $photo
-        ]);
+        //
     }
 
     /**
@@ -73,8 +64,11 @@ class PhotoController extends Controller
      */
     public function edit($id)
     {
-        $data = Photo::find($id);
-        return view('admin.photo.edit', compact('data'));
+        $vidios = VidoModel::find($id);
+
+        return view('admin.vidios.edit', [
+            'data' => $vidios,
+        ]);
     }
 
     /**
@@ -86,18 +80,17 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Photo::find($id);
-        $data->name = $request->photo_name;
+        $vidios = VidoModel::find($id);
 
-        if ($request->photo != null) {
-            $rasm = $request->photo;
-            $rasmname = time() . '.' . $rasm->getClientOriginalExtension();
-            $request->photo->move('photo', $rasmname);
-            $data->url = $rasmname;
+        $vidios->name = $request->name;
+        if ($request->url != null) {
+
+            $vidios->url = $request->url;
+
         }
+        $vidios->save();
+        return redirect(route('admin.vidios.index'));
 
-        $data->save();
-        return redirect(route('admin.photo.index'));
     }
 
     /**
@@ -108,9 +101,9 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        $data = Photo::find($id);
-        $data->delete();
-        return redirect(route('admin.photo.index'));
+        $vidios = VidoModel::find($id);
+        $vidios->delete();
 
+        return redirect(route('admin.vidios.index'));
     }
 }
