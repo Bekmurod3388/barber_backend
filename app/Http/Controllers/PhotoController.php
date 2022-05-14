@@ -89,7 +89,7 @@ class PhotoController extends Controller
         $data = Photo::find($id);
         $data->name = $request->photo_name;
 
-        if ($request->photo!=null) {
+        if ($request->hasFile('photo')) {
             $rasm = $request->photo;
             $rasmname = time().'.'.$rasm->getClientOriginalExtension();
             $request->photo->move('photo',$rasmname);
