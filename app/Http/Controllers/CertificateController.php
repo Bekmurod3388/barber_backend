@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
 use App\Models\Photo;
-use App\Models\Services;
+use App\Models\VidoModel;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class CertificateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-
-        $data = Photo::OrderBy('id', 'DESC')->get();
-        return view('admin.photo.index', [
+        $data = Certificate::OrderBy('id', 'DESC')->get();
+        return view('admin.Certificate.index', [
             'data' => $data
         ]);
     }
@@ -29,7 +29,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-      return view('admin.photo.create');
+        return view('admin.Certificate.create');
     }
 
     /**
@@ -40,15 +40,15 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Photo();
+        $data = new Certificate();
 
-        $data->name = $request->photo_name;
-        $rasm = $request->photo;
+        $data->name = $request->sertifikat_name;
+        $rasm = $request->sertifikat;
         $rasmname = time().'.'.$rasm->getClientOriginalExtension();
-        $request->photo->move('photo',$rasmname);
+        $request->sertifikat->move('sertifikat',$rasmname);
         $data->url = $rasmname;
         $data->save();
-        return redirect(route('admin.photo.index'));
+        return redirect(route('admin.sertifikat.index'));
     }
 
     /**
@@ -59,11 +59,9 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        $photo=Photo::find($id);
-        return view('admin.photo.show',[
-           'photo'=>$photo
-        ]);
-    }
+
+
+   }
 
     /**
      * Show the form for editing the specified resource.
@@ -73,8 +71,11 @@ class PhotoController extends Controller
      */
     public function edit($id)
     {
-        $data=Photo::find($id);
-        return view('admin.photo.edit',compact('data'));
+        $data = Certificate::find($id);
+
+        return view('admin.Certificate.edit', [
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -86,18 +87,16 @@ class PhotoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Photo::find($id);
-        $data->name = $request->photo_name;
+        $data = Certificate::find($id);
 
-        if ($request->hasFile('photo')) {
-            $rasm = $request->photo;
-            $rasmname = time().'.'.$rasm->getClientOriginalExtension();
-            $request->photo->move('photo',$rasmname);
-            $data->url = $rasmname;
+        $data->name = $request->sertifikat_name;
+        if ($request->url != null) {
+
+            $data->url = $request->url;
+
         }
-
         $data->save();
-        return redirect(route('admin.photo.index'));
+        return redirect(route('admin.sertifikat.index'));
     }
 
     /**
@@ -108,9 +107,9 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        $data=Photo::find($id);
-        $data->delete();
- return redirect(route('admin.photo.index'));
+        $vidios = Certificate::find($id);
+        $vidios->delete();
 
+        return redirect(route('admin.sertifikat.index'));
     }
 }

@@ -27,6 +27,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('vidios', App\Http\Controllers\VidioController::class);
     Route::resource('bookings', App\Http\Controllers\BookingController::class);
     Route::resource('barber', App\Http\Controllers\BarberController::class);
+    Route::resource('sertifikat', App\Http\Controllers\CertificateController::class);
 //    Route::resource('facultets', App\Http\Controllers\FacultetController::class);
 //    Route::get('/attendances/create', [\App\Http\Controllers\AttendanceController::class, 'create'])->name('attendance.create');
 //    Route::post('/attendance', [\App\Http\Controllers\AttendanceController::class, 'store'])->name('attendance.store');
