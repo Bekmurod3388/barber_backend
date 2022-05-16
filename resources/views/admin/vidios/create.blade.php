@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Vidio</h1></div>
+                    <div class="col-10"><h1 class="card-title">Video</h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
@@ -25,15 +25,15 @@
                           enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="services">Vidio Name</label>
+                            <label for="services">Video Name</label>
                             <input type="text" name="name" class="form-control" id="photo_name"
-                                   placeholder="Photo Name">
+                                   placeholder="Video Name">
                         </div>
 
 
                         <div class="form-group">
-                            <label for="cost">Vudio url</label>
-                            <input type="text" name="url" class="form-control" id="photo" placeholder=" ">
+                            <label for="cost">Video url</label>
+                            <input type="text" name="url" class="form-control" id="photo" placeholder=" Video Url ">
                         </div>
 
 
