@@ -15,7 +15,8 @@ class ApiServecesController extends Controller
      */
     public function index()
     {
-        return Services::all();
+        $services = Services::all();
+        return response()->json($services);
     }
 
     /**
@@ -37,7 +38,8 @@ class ApiServecesController extends Controller
      */
     public function show($id)
     {
-        return Services::findOrFail($id);
+        $services = Services::findOrFail($id);
+        return response()->json($services);
     }
 
     /**

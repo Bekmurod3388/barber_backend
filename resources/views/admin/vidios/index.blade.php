@@ -27,9 +27,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($data as $dat)
+                        @foreach($data as $d => $dat)
                             <tr>
-                                <th scope="row" class="col-1">{{$dat->id}}</th>
+                                <th scope="row" class="col-1">{{++$d}}</th>
                                 <td>{{$dat->name}}</td>
                                 <td>
 
@@ -39,7 +39,6 @@
                                             allowfullscreen></iframe>
 
                                 </td>
-
 
                                 <td class="col-2">
 
@@ -64,19 +63,19 @@
 
                         </tbody>
                     </table>
-                    <div class="container">
-                        <div class="row justify-content-center">
 
+{{--                    <section class="content12 cid-t34gh8nW7r" id="content12-2s">--}}
+{{--                        <div class="container">--}}
+{{--                            <div class="row justify-content-center">--}}
+{{--                                @if ($data->links())--}}
+{{--                                    <div class="mt-4 p-4 box has-text-centered">--}}
+{{--                                        {{ $data->links() }}--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </section>--}}
 
-                            {{--                            @if ($posts->links())--}}
-                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
-                            {{--                                    {{ $posts->links() }}--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
-
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
