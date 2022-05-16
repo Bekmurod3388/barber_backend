@@ -40,8 +40,8 @@
                         <p>Video</p>
                     </a>
                 </li>
-                <li class="nav-item {{  request()->routeIs('admin.category.index') ? 'active' : '' }}">
-                    <a href="">
+                <li class="nav-item {{  request()->routeIs('admin.sertifikat.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.sertifikat.index')}}">
                         <i class="bi bi-card-list"></i>
                         <p>Sertifikat</p>
                     </a>

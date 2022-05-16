@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Photo</h1></div>
+                    <div class="col-10"><h1 class="card-title">Sertifikat</h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
@@ -21,19 +21,19 @@
                     @endif
 
 
-                    <form action="{{route('admin.photo.store')}}" method="POST" accept-charset="UTF-8"
-                          enctype="multipart/form-data">
+                    <form action="{{route('admin.sertifikat.store')}}" method="POST" accept-charset="UTF-8"
+                          enctype="multipart/form-data" required=" ">
                         @csrf
                         <div class="form-group">
-                            <label for="services">Photo Name</label>
-                            <input required="" type="text" name="photo_name" class="form-control" id="photo_name"
-                                   placeholder="Photo Name">
+                            <label for="services">Sertifikat Name</label>
+                            <input required="" type="text" name="sertifikat_name" class="form-control" id="sertifikat_name"
+                                   placeholder="Sertifikat Name">
                         </div>
 
 
                         <div class="form-group">
-                            <label for="cost">Photo</label>
-                            <input required="" type="file" name="photo" class="form-control" id="photo" placeholder=" ">
+                            <label for="cost">Sertifikat</label>
+                            <input  required=" " type="file" name="sertifikat" class="form-control" id="photo" placeholder=" ">
                         </div>
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
 
@@ -44,4 +44,5 @@
         </div>
     </div>
 @endsection
+
 
