@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('barber_phone_number');
             $table->string('barber_home_adress');
             $table->string('passport_number');
-            $table->time('work_time');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BarberRequest;
 use Illuminate\Http\Request;
 use App\Models\Barber;
 use function GuzzleHttp\Promise\all;
@@ -19,10 +20,15 @@ class BarberController extends Controller
         return view('admin.barbers.create');
     }
 
-    public function store(Request $request)
+    public function store(BarberRequest $request)
     {
-        $input = $request->all();
-        Barber::create($input);
+        $data = new Barber();
+        $data->barber_name = $request->nomi;
+        $data->barber_phone_number = $request->telefon_raqami;
+        $data->barber_home_adress = $request->address;
+        $data->start_time = $request->start;
+        $data->end_time  = $request->end;
+        $data->save();
         return redirect(route('admin.barber.index'))->with('flash_message', 'Barbers Addedd!');
     }
 

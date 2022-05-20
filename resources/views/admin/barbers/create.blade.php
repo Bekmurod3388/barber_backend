@@ -4,14 +4,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Barbers</h1></div>
+                    <div class="col-10"><h1 class="card-title"> Sartarosh qo`shish </h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong> Xatolik!.. </strong>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -25,28 +25,33 @@
 
                         @csrf
                         <div class="form-group">
-                            <label for="barbers">Barber  Name</label>
-                            <input type="text" name="barber_name" class="form-control" id="barber_name" placeholder="Barber Name">
-                        </div>
-
-{{--                        <div class="btn btn-danger w-100 ">hato</div>--}}
-                        <div class="form-group">
-                            <label for="barber_phone_number">Barber Phone</label>
-                            <input type="tel" name="barber_phone_number" class="form-control" id="cost" placeholder="+99890000000">
+                            <label for="barbers"> Sartarosh nomi</label>
+                            <input type="text" name="Nomi" class="form-control" id="barber_name" placeholder="barber_name">
                         </div>
 
                         <div class="form-group">
-                            <label for="barber_home_adress">Home Adres </label>
-                            <input type="text" name="barber_home_adress" class="form-control" id="barber_home_adress" placeholder="Home Adress">
+                            <label for="barber_phone_number"> Telefon raqami </label>
+                            <input type="tel" name="telefon_raqami" class="form-control" id="cost" placeholder="barber_phone_number">
+                        </div>
 
-                            <div class="form-group">
-                                <label for="barber_phone_number">Passport</label>
-                                <input type="text" name="passport_number" class="form-control" id="cost" placeholder="AA 0000000">
-                            </div>
+                        <div class="form-group">
+                            <label for="barber_home_adress"> Manzili </label>
+                            <input type="text" name="address" class="form-control" id="barber_home_adress" placeholder=" Adress">
+                        </div>
 
-                        </div> <div class="form-group">
-                            <label for="header_ru">Work Time</label>
-                            <input type="text" name="work_time" class="form-control" id="work_time" placeholder="00:00">
+                        <div class="form-group">
+                            <label for="barber_phone_number">Passport Seriyasi</label>
+                            <input type="text" name="address" class="form-control" id="cost" placeholder="AA 0000000">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="header_ru"> Kelish vaqti</label>
+                            <input type="time" name="start" class="form-control" id="work_time">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="header_ru"> Ketish vaqti</label>
+                            <input type="time" name="end" class="form-control" id="work_time">
                         </div>
 
 
