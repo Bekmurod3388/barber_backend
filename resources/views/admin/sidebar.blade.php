@@ -25,7 +25,7 @@
                 <li class="nav-item {{  request()->routeIs('admin.bookings.index') ? 'active' : '' }}">
                     <a href="{{route('admin.bookings.index')}}">
                         <i class="bi bi-journal-text"></i>
-                        <p>Booking</p>
+                        <p>Band Qilish</p>
                     </a>
                 </li>
                 <li class="nav-item {{request()->routeIs('admin.photo.index') ? 'active' : '' }}">

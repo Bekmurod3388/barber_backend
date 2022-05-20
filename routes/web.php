@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -28,9 +30,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('bookings', App\Http\Controllers\BookingController::class);
     Route::resource('barber', App\Http\Controllers\BarberController::class);
     Route::resource('sertifikat', App\Http\Controllers\CertificateController::class);
-//    Route::resource('facultets', App\Http\Controllers\FacultetController::class);
-//    Route::get('/attendances/create', [\App\Http\Controllers\AttendanceController::class, 'create'])->name('attendance.create');
-//    Route::post('/attendance', [\App\Http\Controllers\AttendanceController::class, 'store'])->name('attendance.store');
+
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
