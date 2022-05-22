@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Barber</h1></div>
+                    <div class="col-9"><h1 class="card-title"> Sartaroshlar </h1></div>
                     <div class="col-md-1">
                         <a class="btn btn-primary" href="{{route('admin.barber.create')}}">
                             <span class="btn-label">
@@ -21,10 +21,10 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Barber Name</th>
-                            <th class="" scope="col">Barber Phone Number</th>
-                            <th class="" scope="col">Barber Address </th>
-                            <th class="" scope="col">Work Time</th>
+                            <th class="" scope="col"> Ismi </th>
+                            <th class="" scope="col"> Telefon raqami </th>
+                            <th class="" scope="col"> Kelish vaqti </th>
+                            <th class="" scope="col"> Ketish vaqti </th>
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
@@ -35,9 +35,8 @@
                                 <th scope="row" class="col-1">{{$barber->id}}</th>
                                 <td>{{$barber->barber_name}}</td>
                                 <td>{{$barber->barber_phone_number}}</td>
-                                <td>{{$barber->barber_home_adress}}</td>
-                                <td>{{$barber->work_time}}</td>
-
+                                <td>{{$barber->start_time}}</td>
+                                <td>{{$barber->end_time}}</td>
 
                                 <td class="col-2">
                                     <form action="{{route('admin.barber.destroy',$barber->id)}}" method="POST">

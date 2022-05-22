@@ -26,9 +26,8 @@ class BarberRequest extends FormRequest
     public function rules()
     {
         return [
-            'barber_name' => 'required | max:255 ',
-            'barber_phone_number' => [ 'required ',new PhoneNumber],
-            'passport_number' => [ ' required', new PassportNum() ]
+            'barber_phone_number' => [ 'unique:barbers',  new PhoneNumber ],
+            'passport_number' => [ 'unique:barbers',  new PassportNum() ]
         ];
     }
 }

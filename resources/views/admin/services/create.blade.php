@@ -26,18 +26,18 @@
                         @csrf
                         <div class="form-group">
                             <label for="services">Services Name</label>
-                            <input type="text" name="services_name" class="form-control" id="services" placeholder="Services Name">
+                            <input type="text" name="services_name" class="form-control" id="services" placeholder="Services Name" required>
                         </div>
                         <div class="form-group">
                             <label for="cost">Cost</label>
-                            <input type="number" name="cost" class="form-control" id="cost" placeholder="cost">
+                            <input type="number" name="cost" class="form-control" id="cost" placeholder="cost" required >
                         </div>
 
                         <div class="form-group">
                             <select name="barber_id" required class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="building">
                                 <option value="0" selected> Sartarosh </option>
                                 @foreach($barbers as $barber)
-                                    <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                    <option  value="{{$barber->id}}">{{$barber->barber_name}}</option>
                                 @endforeach
                             </select>
                         </div>

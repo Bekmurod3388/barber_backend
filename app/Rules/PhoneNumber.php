@@ -24,14 +24,14 @@ class PhoneNumber implements Rule
      * @return bool
      */
     public function passes($attribute, $value)
-    {
-        $n=strlen($value);
+    {   $n=strlen($value);
         $num=substr($value,1,$n-1);
-        if(is_numeric($num) && ($value[0]='+')){
+        if(is_numeric($num) && ($value[0]=='+')){
             return true;
         }
         return false;
     }
+
 
     /**
      * Get the validation error message.
@@ -40,6 +40,6 @@ class PhoneNumber implements Rule
      */
     public function message()
     {
-        return 'telefon raqami + bilan boshlanishi va 13 ta raqamdan iborat bo\'lishi kerak';
+        return 'telefon raqami + bilan boshlanishi  kerak';
     }
 }

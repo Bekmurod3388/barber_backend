@@ -22,41 +22,42 @@
 
 
                     <form action="{{route('admin.barber.store')}}" method="POST" accept-charset="UTF-8">
-
                         @csrf
+
                         <div class="form-group">
                             <label for="barbers"> Sartarosh nomi</label>
-                            <input type="text" name="Nomi" class="form-control" id="barber_name" placeholder="barber_name">
+                            <input type="text" name="barber_name" value="{{old('barber_name')}}" class="form-control" id="barber_name" placeholder="barber_name" required >
                         </div>
 
                         <div class="form-group">
                             <label for="barber_phone_number"> Telefon raqami </label>
-                            <input type="tel" name="telefon_raqami" class="form-control" id="cost" placeholder="barber_phone_number">
+                            <input type="tel" name="barber_phone_number"  value="{{old('barber_phone_number')}}"  class="form-control" id="cost" placeholder="barber_phone_number">
                         </div>
 
                         <div class="form-group">
                             <label for="barber_home_adress"> Manzili </label>
-                            <input type="text" name="address" class="form-control" id="barber_home_adress" placeholder=" Adress">
+                            <input type="text" name="barber_home_adress" value="{{old('barber_home_adress')}}"  class="form-control" id="barber_home_adress" placeholder=" Adress" required >
                         </div>
 
                         <div class="form-group">
                             <label for="barber_phone_number">Passport Seriyasi</label>
-                            <input type="text" name="address" class="form-control" id="cost" placeholder="AA 0000000">
+                            <input type="text" name="passport_number" value="{{old('passport_number')}}"  class="form-control" id="cost" placeholder="AA 0000000" required>
                         </div>
 
                          <div class="form-group">
                             <label for="header_ru"> Kelish vaqti</label>
-                            <input type="time" name="start" class="form-control" id="work_time">
+                            <input type="time" name="start_time" value="{{old('start_time')}}"  class="form-control" id="work_time" required>
                         </div>
 
                          <div class="form-group">
                             <label for="header_ru"> Ketish vaqti</label>
-                            <input type="time" name="end" class="form-control" id="work_time">
+                            <input type="time" name="end_time" value="{{old('end_time')}}"  class="form-control" id="work_time" required >
                         </div>
 
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
+
                     </form>
                 </div>
             </div>

@@ -15,7 +15,7 @@
                             <td>{{$services->cost}}</td>
                         </tr>
                         <tr>
-                            <th>ID</th>
+                            <th> Sartarosh  Id </th>
                             <td>{{$services->barber_id}}</td>
                         </tr>
 
