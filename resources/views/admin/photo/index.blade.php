@@ -4,13 +4,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Photo</h1></div>
+                    <div class="col-9"><h1 class="card-title">Rasm</h1></div>
                     <div class="col-md-1">
                         <a class="btn btn-primary" href="{{route('admin.photo.create')}}">
                             <span class="btn-label">
                                 <i class="fa fa-plus"></i>
                             </span>
-                            Photo qo'shish
+                            Rasm qo'shish
                         </a>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Photo name</th>
-                            <th class="" scope="col">Photo</th>
+                            <th class="" scope="col">Rasm nomi</th>
+                            <th class="" scope="col">Rasm</th>
                             <th class="" scope="col">Amallar</th>
 
                         </tr>
@@ -61,11 +61,11 @@
                         <div class="row justify-content-center">
 
 
-                            {{--                            @if ($posts->links())--}}
-                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
-                            {{--                                    {{ $posts->links() }}--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
+                                                        @if ($data->links())
+                                                            <div class="mt-4 p-4 box has-text-centered">
+                                                                {{ $data->links() }}
+                                                            </div>
+                                                        @endif
 
 
                         </div>

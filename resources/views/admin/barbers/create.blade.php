@@ -26,17 +26,17 @@
 
                         <div class="form-group">
                             <label for="barbers"> Sartarosh nomi</label>
-                            <input type="text" name="barber_name" value="{{old('barber_name')}}" class="form-control" id="barber_name" placeholder="barber_name" required >
+                            <input type="text" name="barber_name" value="{{old('barber_name')}}" class="form-control" id="barber_name" placeholder="Sartarosh ismi" required >
                         </div>
 
                         <div class="form-group">
                             <label for="barber_phone_number"> Telefon raqami </label>
-                            <input type="tel" name="barber_phone_number"  value="{{old('barber_phone_number')}}"  class="form-control" id="cost" placeholder="barber_phone_number">
+                            <input type="tel" name="barber_phone_number"  value="{{old('barber_phone_number')}}"  class="form-control" id="cost" placeholder="Sartarosh telefoni">
                         </div>
 
                         <div class="form-group">
                             <label for="barber_home_adress"> Manzili </label>
-                            <input type="text" name="barber_home_adress" value="{{old('barber_home_adress')}}"  class="form-control" id="barber_home_adress" placeholder=" Adress" required >
+                            <input type="text" name="barber_home_adress" value="{{old('barber_home_adress')}}"  class="form-control" id="barber_home_adress" placeholder="Manzil" required >
                         </div>
 
                         <div class="form-group">

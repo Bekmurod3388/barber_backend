@@ -11,7 +11,7 @@
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Oops!</strong> Qandaydir xatolik chiqdi<br><br>
+                            <strong>Ooops!</strong> Qandaydir xatolik chiqdi<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -26,13 +26,13 @@
                         @method('PUT')
                         @csrf
                         <div class="form-group">
-                            <label for="header_ru">Video name</label>
+                            <label for="header_ru">Video nomi</label>
                             <input type="text" value="{{$data->name}}" name="name" class="form-control"
                                    id="header_ru" placeholder="">
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Video_old</label><br>
+                            <label for="header_ru">Oldingi video</label><br>
                             <iframe width="300" height="150" src="{{$data->url}}" title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Video new Url</label>
+                            <label for="header_ru">Video yangi url</label>
                             <input type="text" name="url" class="form-control" id="header_ru" placeholder=" ">
                         </div>
 

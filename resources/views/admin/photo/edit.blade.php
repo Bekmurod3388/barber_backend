@@ -26,17 +26,17 @@
                         @method('PUT')
                         @csrf
                         <div class="form-group">
-                            <label for="header_ru">Photo name</label>
+                            <label for="header_ru">Rasm nomi</label>
                             <input type="text" value="{{$data->name}}" name="photo_name" class="form-control"
                                    id="header_ru" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="header_ru">Photo_old</label><br>
+                            <label for="header_ru">Oldingi rasm</label><br>
                             <img style="width: 150px; height: 150px;" src="/photo/{{$data->url}}" alt="">
                         </div>
 
                         <div class="form-group">
-                            <label for="header_ru">Photo</label>
+                            <label for="header_ru">Rasm</label>
                             <input type="file" name="photo" class="form-control" id="header_ru" placeholder=" ">
                         </div>
 

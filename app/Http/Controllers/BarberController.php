@@ -39,7 +39,7 @@ class BarberController extends Controller
            $data -> passport_number = $request -> passport_number;
            $data -> start_time = $request -> start_time;
            $data -> end_time = $request -> end_time;
-
+          $data->save();
 //       }
 
 

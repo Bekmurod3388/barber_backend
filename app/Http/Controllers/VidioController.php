@@ -15,7 +15,7 @@ class VidioController extends Controller
      */
     public function index()
     {
-        $data = VidoModel::OrderBy('id', 'DESC')->get();
+        $data = VidoModel::OrderBy('id', 'DESC')->paginate(4);
         return view('admin.vidios.index', [
             'data' => $data
         ]);

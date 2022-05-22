@@ -31,7 +31,7 @@
                 <li class="nav-item {{request()->routeIs('admin.photo.index') ? 'active' : '' }}">
                     <a href="{{route('admin.photo.index')}}">
                         <i class="fas flaticon-photo-camera"></i>
-                        <p>Photo</p>
+                        <p>Rasm</p>
                     </a>
                 </li>
                 <li class="nav-item {{  request()->routeIs('admin.vidios.index') ? 'active' : '' }}">

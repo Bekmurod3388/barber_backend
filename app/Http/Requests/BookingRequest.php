@@ -25,8 +25,7 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
-            'barber_name' => 'required | max:255 ',
-            'client_phone_number' => [ 'required ',new PhoneNumber],
+            'client_phone_number' => [ 'required ',new PhoneNumber()],
         ];
     }
 }

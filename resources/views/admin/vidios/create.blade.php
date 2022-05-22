@@ -11,7 +11,7 @@
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong>Ooops!</strong> Qandaydir xatolik.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -25,9 +25,9 @@
                           enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="services">Video Name</label>
+                            <label for="services">Video nomi</label>
                             <input required="" type="text" name="name" class="form-control" id="photo_name"
-                                   placeholder="Video Name">
+                                   placeholder="Video nomi">
                         </div>
 
 

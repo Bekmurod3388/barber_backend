@@ -16,7 +16,7 @@ class PhotoController extends Controller
     public function index()
     {
 
-        $data = Photo::OrderBy('id', 'DESC')->get();
+        $data = Photo::OrderBy('id', 'DESC')->paginate(6);
         return view('admin.photo.index', [
             'data' => $data
         ]);

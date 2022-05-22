@@ -21,7 +21,7 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Sertifikat name</th>
+                            <th class="" scope="col">Sertifikat nomi</th>
                             <th class="" scope="col">Sertifikat</th>
                             <th class="" scope="col">Amallar</th>
 

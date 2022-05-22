@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('client_name');
             $table->text('client_phone_number');
             $table->integer('barber_id');
-            $table->date('time');
+            $table->time('time');
             $table->timestamps();
         });
     }

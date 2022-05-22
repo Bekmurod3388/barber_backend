@@ -9,7 +9,7 @@
             <li class="nav-item dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                     <div class="avatar-sm">
-                        <img src="{{asset('/img/user.png')}}" alt="..." class="avatar-img rounded-circle">
+                        <img src="https://img.freepik.com/free-icon/important-person_318-10744.jpg" alt="..." class="avatar-img rounded-circle">
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -17,7 +17,7 @@
                         <li>
 
                             <div class="user-box">
-                                <div class="avatar-lg"><img src="{{asset('asset/img/user.png')}}" alt="image profile"
+                                <div class="avatar-lg"><img src=" https://img.freepik.com/free-icon/important-person_318-10744.jpg" alt="image profile"
                                                             class="avatar-img rounded"></div>
                                 <div class="u-text">
                                     <h4>{{Auth::user()->name}}</h4>

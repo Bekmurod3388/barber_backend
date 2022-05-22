@@ -11,7 +11,7 @@
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Oops!</strong> Qandaydir xatolik chiqdi<br><br>
+                            <strong>Ooops!</strong> Qandaydir xatolik chiqdi<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -26,12 +26,12 @@
                         @method('PUT')
                         @csrf
                         <div class="form-group">
-                            <label for="header_ru">Sertifikat name</label>
+                            <label for="header_ru">Sertifikat nomi</label>
                             <input type="text" value="{{$data->name}}" name="sertifikat_name" class="form-control"
                                    id="header_ru" placeholder="">
                         </div>
                         <div class="form-group">
-                            <label for="header_ru">Sertifikat_old</label><br>
+                            <label for="header_ru">Sertifikatning oldingi rasmi</label><br>
                             <img style="width: 150px; height: 150px;" src="/sertifikat/{{$data->url}}" alt="">
                         </div>
 
