@@ -45,8 +45,6 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'services_name' => 'required',
-            'cost' => 'required',
             'barber_id' => 'required'
         ]);
 

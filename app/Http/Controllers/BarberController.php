@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BarberRequest;
+use App\Rules\PassportNumber;
 use Illuminate\Http\Request;
 use App\Models\Barber;
 use function GuzzleHttp\Promise\all;
 
 class BarberController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $barbers = Barber::all();
@@ -22,14 +28,23 @@ class BarberController extends Controller
 
     public function store(BarberRequest $request)
     {
-        $data = new Barber();
-        $data->barber_name = $request->nomi;
-        $data->barber_phone_number = $request->telefon_raqami;
-        $data->barber_home_adress = $request->address;
-        $data->start_time = $request->start;
-        $data->end_time  = $request->end;
-        $data->save();
-        return redirect(route('admin.barber.index'))->with('flash_message', 'Barbers Addedd!');
+//        Barber::create($request->all());
+       $data = new Barber();
+
+//       if ($request->start_time < $request->end_time ){
+
+           $data -> barber_name = $request -> barber_name;
+           $data -> barber_phone_number = $request -> barber_phone_number;
+           $data -> barber_home_adress = $request -> barber_home_adress;
+           $data -> passport_number = $request -> passport_number;
+           $data -> start_time = $request -> start_time;
+           $data -> end_time = $request -> end_time;
+
+//       }
+
+
+        return redirect(route('admin.barber.index'));
+
     }
 
     public function show($id)
