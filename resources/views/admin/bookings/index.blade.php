@@ -4,14 +4,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-9"><h1 class="card-title">Bookings</h1></div>
+                    <div class="col-9"><h1 class="card-title">Band Qilish</h1></div>
                     <div class="col-md-1">
                         <a class="btn btn-primary" href="{{route('admin.bookings.create')}}">
                             <span class="btn-label">
 {{--                                admin.bookings.index--}}
                                 <i class="fa fa-plus"></i>
                             </span>
-                           Client qoshish
+                           Mijoz qo'shish
                         </a>
                     </div>
                 </div>
@@ -21,9 +21,9 @@
                         <thead>
                         <tr>
                             <th class="" scope="col">#</th>
-                            <th class="" scope="col">Client name</th>
-                            <th class="" scope="col">barber Id</th>
-                            <th class="" scope="col">Time</th>
+                            <th class="" scope="col">Mijoz ismi</th>
+                            <th class="" scope="col">Sartarosh Id</th>
+                            <th class="" scope="col">Vaqti</th>
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>

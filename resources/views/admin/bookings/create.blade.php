@@ -4,14 +4,14 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-10"><h1 class="card-title">Booking</h1></div>
+                    <div class="col-10"><h1 class="card-title">Band qilish</h1></div>
                 </div>
                 <hr>
                 <div class="card-body">
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong>Ooops!!!</strong> Qndaydir xatolik.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -25,13 +25,13 @@
 
                         @csrf
                         <div class="form-group">
-                            <label for="services">Client  Name</label>
-                            <input type="text" name="client_name" class="form-control" id="services" placeholder="Client Name">
+                            <label for="services">Mijoz ismi</label>
+                            <input type="text" name="client_name" class="form-control" required id="services" placeholder="Mijoz ismi">
                         </div>
 
 {{--                        <div class="btn btn-danger w-100 ">hato</div>--}}
                         <div class="form-group">
-                            <label for="cost">Client phone</label>
+                            <label for="cost">Mijoz telefoni</label>
                             <input type="tel" name="client_phone_number" class="form-control" id="cost" placeholder="+99890000000">
                         </div>
 
@@ -43,9 +43,9 @@
                                 @endforeach
                             </select>
                         </div>
-
+                        <div>
                             <label for="header_ru">Time</label>
-                            <input type="date" name="time" class="form-control" id="header_ru" placeholder="time">
+                            <input type="time" name="time" class="form-control" id="header_ru" placeholder="">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
