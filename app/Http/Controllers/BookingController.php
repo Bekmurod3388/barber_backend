@@ -54,6 +54,7 @@ class BookingController extends Controller
         $booking->client_phone_number = $request->client_phone_number;
         $booking->barber_id = $request->barber_id;
         $booking->time = $request->time;
+
         $booking->save();
 
         return redirect(route('admin.bookings.index'));

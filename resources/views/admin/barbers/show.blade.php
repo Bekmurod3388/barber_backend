@@ -7,6 +7,10 @@
                 <div class="row container mt-4">
                     <table class=" table table-bordered border-primary ">
                         <tr>
+                            <th>Sartarosh Id</th>
+                            <td>{{$barbers->id}}</td>
+                        </tr>
+                        <tr>
                             <th>Sartarosh nomi</th>
                             <td>{{$barbers->barber_name}}</td>
                         </tr>

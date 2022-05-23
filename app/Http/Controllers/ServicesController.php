@@ -15,7 +15,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $servic = Services::OrderBy('id', 'DESC')->get();
+        $servic = Services::OrderBy('id', 'DESC')->paginate(6);
         $barbers = Barber::all();
         return view('admin.services.index', [
             'services' => $servic,
@@ -63,7 +63,7 @@ class ServicesController extends Controller
     {
         $services=Services::findor($id);
         return view('admin.services.show', [
-            'services' => $services
+            'services' => $services,
         ]);
     }
 

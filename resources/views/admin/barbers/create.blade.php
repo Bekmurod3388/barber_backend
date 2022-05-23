@@ -46,16 +46,16 @@
 
                          <div class="form-group">
                             <label for="header_ru"> Kelish vaqti</label>
-                            <input type="time" name="start_time" value="{{old('start_time')}}"  class="form-control" id="work_time" required>
+                            <input type='time' min='09:00' max='22:00' name="start_time" value="{{old('start_time')}}"  class="form-control without_ampm" id="start_time" required>
                         </div>
 
                          <div class="form-group">
                             <label for="header_ru"> Ketish vaqti</label>
-                            <input type="time" name="end_time" value="{{old('end_time')}}"  class="form-control" id="work_time" required >
+                            <input type='time' min='09:00' max='22:00' name="end_time"  value="{{old('end_time')}}"  class="form-control without_ampm" id="end_time"  required >
                         </div>
 
 
-                        <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
+                        <button type="submit" id="alert" class="btn btn-primary " onclick="end()" >Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
 
                     </form>
@@ -63,4 +63,26 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+
+    <script>
+
+        function end() {
+            var min = document.getElementById("start_time").value;
+            var max = document.getElementById("end_time").value;
+            if (min > max) {
+                swal({
+                    icon: 'error',
+                    title: 'Xatolik',
+                    text: 'Kelish vaqti Ketish vaqtidan  kichik bolishi kerak.',
+                    confirmButton: 'Continue',
+                })
+            }
+        }
+
+
+    </script>
+
 @endsection

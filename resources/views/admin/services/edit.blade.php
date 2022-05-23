@@ -21,28 +21,40 @@
                     @endif
 
 
-                    <form action="{{route('admin.services.update',$services->id)}}" method="POST" accept-charset="UTF-8">
+                    <form action="{{route('admin.services.update',$services->id)}}" method="POST"
+                          accept-charset="UTF-8">
                         @method('PUT')
                         @csrf
-                        <div class="form-group">
-                            <label for="header_ru">Services</label>
-                            <input type="text" name="services_name" value="{{$services->services_name}}" class="form-control" id="header_ru" placeholder="Services">
-                        </div>
-                        <div class="form-group">
-                            <label for="header_ru">Narxi</label>
-                            <input type="text" name="cost" value="{{$services->cost}}" class="form-control" id="header_ru" placeholder="cost">
-                        </div>
-                        <div class="form-group">
-                            <select name="barber_id" required class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="building">
-                                <option value="0" selected> Sartarosh </option>
-                                @foreach($barbers as $barber)
-                                    <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        @foreach($barbers as $barber)
+                            @if( $services->barber_id == $barber->id )
+                                <div class="form-group">
+                                    <label for="header_ru">Services</label>
+                                    <input type="text" name="services_name" value="{{$services->services_name}}"
+                                           class="form-control" id="header_ru" placeholder="Services">
+                                </div>
+                                <div class="form-group">
+                                    <label for="header_ru">Narxi</label>
+                                    <input type="text" name="cost" value="{{$services->cost}}" class="form-control"
+                                           id="header_ru" placeholder="cost">
+                                </div>
+                                <div class="form-group">
+                                    <select name="barber_id" required
+                                            class="form-select form-control form-select-lg mb-3"
+                                            aria-label=".form-select-lg example" id="building">
+                                        <option value="{{$services->barber_id}}"
+                                                selected> {{$barber->barber_name}} </option>
+                                        @foreach($barbers as $barber)
+                                            @if( $services->barber_id != $barber->id )
+                                                <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                        <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
-                        <input type="reset" class="btn btn-danger" value="Tozalash">
+                                <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
+                                <input type="reset" class="btn btn-danger" value="Tozalash">
+                            @endif
+                        @endforeach
                     </form>
                 </div>
             </div>
