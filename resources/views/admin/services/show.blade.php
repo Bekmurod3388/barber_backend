@@ -19,21 +19,6 @@
                             <td>{{$services->barber_id}}</td>
                         </tr>
 
-{{--                        <tr>--}}
-{{--                            <th>Xonadoshlari</th>--}}
-{{--                            <td>--}}
-{{--                                @if(count($sheriklar)>1)--}}
-{{--                                    @foreach($sheriklar as $sh)--}}
-{{--                                        @if($sh->id==$data->id) @continue @endif--}}
-{{--                                        <a href="{{route('admin.students.show',$sh->id)}}">{{$sh->surname}} {{$sh->name}} {{ $sh->f_s_name }}</a>--}}
-{{--                                        <br>--}}
-{{--                                    @endforeach--}}
-{{--                                @else--}}
-{{--                                    <h3>Yolg'iz turadi</h3>--}}
-{{--                                @endif--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-
                     </table>
                 </div>
             </div>

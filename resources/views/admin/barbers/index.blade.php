@@ -30,9 +30,9 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($barbers as $barber)
+                        @foreach($barbers as $ind=>$barber)
                             <tr>
-                                <th scope="row" class="col-1">{{$barber->id}}</th>
+                                <td class="col-1">{{($barbers->currentpage()-1)*($barbers->perpage())+$ind+1}}</td>
                                 <td>{{$barber->barber_name}}</td>
                                 <td>{{$barber->barber_phone_number}}</td>
                                 <td>{{$barber->start_time}}</td>
@@ -70,19 +70,19 @@
 
                         </tbody>
                     </table>
+
                     <div class="container">
                         <div class="row justify-content-center">
 
-
-                            {{--                            @if ($posts->links())--}}
-                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
-                            {{--                                    {{ $posts->links() }}--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
-
+                        @if ($barbers->links())
+                            <div class="mt-4 p-4 box has-text-centered">
+                                {{ $barbers->links() }}
+                            </div>
+                        @endif
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

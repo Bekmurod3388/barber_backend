@@ -11,7 +11,7 @@
 
                     @if ($errors->any())
                         <div class="alert alert-danger">
-                            <strong>Ooops!!!</strong> Qandaydir xatolik.<br><br>
+                            <strong> Xatolik!!! </strong>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -22,17 +22,17 @@
 
 
                     <form action="{{route('admin.bookings.store')}}" method="POST" accept-charset="UTF-8">
-
                         @csrf
+
                         <div class="form-group">
                             <label for="services">Mijoz ismi</label>
-                            <input type="text" name="client_name" class="form-control" required id="services" placeholder="Mijoz ismi">
+                            <input type="text" name="client_name" class="form-control" value="{{old('client_name')}}" required id="services" placeholder="Mijoz ismi">
                         </div>
 
 {{--                        <div class="btn btn-danger w-100 ">hato</div>--}}
                         <div class="form-group">
                             <label for="cost">Mijoz telefoni</label>
-                            <input type="tel" name="client_phone_number" class="form-control" id="cost" placeholder="+99890000000">
+                            <input type="tel" name="client_phone_number" class="form-control" value="{{old('client_phone_number')}}" id="cost" placeholder="+99890000000">
                         </div>
 
                         <div class="form-group">
@@ -42,14 +42,21 @@
                                     <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
                                 @endforeach
                             </select>
+                        </div >
+
+                        <div class="form-group" >
+                            <label for="header_ru">Sana</label>
+                            <input type="date" name="date" class="form-control" id="header_ru" placeholder="" value="{{old('date')}}">
                         </div>
-                        <div>
-                            <label for="header_ru">Time</label>
-                            <input type="time" name="time" class="form-control" id="header_ru" placeholder="">
+
+                        <div class="form-group" >
+                            <label for="header_ru">Vaqti</label>
+                            <input type="time" name="time" class="form-control" id="header_ru" placeholder="" value="{{old('time')}}">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
+
                     </form>
                 </div>
             </div>

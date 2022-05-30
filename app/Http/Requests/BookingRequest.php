@@ -25,6 +25,7 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
+
             'client_phone_number' => [ 'required ',new PhoneNumber()],
         ];
     }

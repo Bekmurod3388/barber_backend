@@ -28,11 +28,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($services as $servic)
+                        @foreach($services as $ind=>$servic)
                             @foreach($barbers as $barber)
                                 @if($servic->barber_id == $barber->id)
                                     <tr>
-                                        <th scope="row" class="col-1">{{$servic->id}}</th>
+                                        <td class="col-1">{{($services->currentpage()-1)*($services->perpage())+$ind+1}}</td>
                                         <td>{{$servic->services_name}}</td>
                                         <td>{{$servic->cost}}</td>
                                         <td>{{$barber->barber_name}}</td>
@@ -76,11 +76,11 @@
                         <div class="row justify-content-center">
 
 
-                            {{--                            @if ($posts->links())--}}
-                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
-                            {{--                                    {{ $posts->links() }}--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
+                        @if ($services->links())
+                            <div class="mt-4 p-4 box has-text-centered">
+                                {{ $services->links() }}
+                            </div>
+                        @endif
 
 
                         </div>

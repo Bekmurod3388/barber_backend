@@ -40,6 +40,6 @@ class PhoneNumber implements Rule
      */
     public function message()
     {
-        return 'telefon raqami + bilan boshlanishi va 13 ta raqamdan iborat bo\'lishi kerak';
+        return 'telefon raqami + bilan boshlanishi  kerak';
     }
 }
