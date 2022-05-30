@@ -6,7 +6,7 @@ use App\Http\Requests\BookingRequest;
 use App\Models\Barber;
 use App\Models\Booking;
 use Illuminate\Http\Request;
-
+use function GuzzleHttp\Promise\all;
 class BookingController extends Controller
 {
 
