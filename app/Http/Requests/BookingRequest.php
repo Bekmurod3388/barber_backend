@@ -27,6 +27,7 @@ class BookingRequest extends FormRequest
         return [
 
             'client_phone_number' => [ 'required ',new PhoneNumber()],
+            'barber_id'=>'gt:0',
         ];
     }
 }

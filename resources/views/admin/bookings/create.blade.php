@@ -46,15 +46,19 @@
 
                         <div class="form-group" >
                             <label for="header_ru">Sana</label>
-                            <input type="date" name="date" class="form-control" id="header_ru" placeholder="" value="{{old('date')}}">
+                            <input type="date" name="day" class="form-control" id="day" placeholder="" value="{{old('date')}}">
                         </div>
 
                         <div class="form-group" >
-                            <label for="header_ru">Vaqti</label>
-                            <input type="time" name="time" class="form-control" id="header_ru" placeholder="" value="{{old('time')}}">
+                            <label for="header_ru"> Boshlash vaqti </label>
+                            <input type="time" name="start_time" class="form-control" id="start_time" placeholder="" value="{{old('time')}}">
+                        </div>
+                        <div class="form-group" >
+                            <label for="header_ru"> Tugash vaqti </label>
+                            <input type="time" name="end_time" class="form-control" id="end_time" placeholder="" value="{{old('time')}}">
                         </div>
 
-                        <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
+                        <button type="submit" id="alert" class="btn btn-primary" onclick="end()" >Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
 
                     </form>
@@ -63,3 +67,30 @@
         </div>
     </div>
 @endsection
+
+@section('script')
+
+    <script>
+
+        function end() {
+
+            let min = $('#start_time').val();
+            let max = $('#end_time').val();
+
+            if (min > max) {
+                swal({
+                    icon: 'error',
+                    title: 'Xatolik',
+                    text: 'Kelish vaqti Ketish vaqtidan  kichik bolishi kerak.',
+                    confirmButton: 'Continue',
+                })
+                $('#end_time').val('');
+                $('#start_time').val('');
+            }
+        }
+
+
+    </script>
+
+@endsection
+

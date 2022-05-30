@@ -52,7 +52,7 @@ return [
     'gt' => [
         'array' => 'The :attribute must have more than :value items.',
         'file' => 'The :attribute must be greater than :value kilobytes.',
-        'numeric' => 'The :attribute must be greater than :value.',
+        'numeric' => ' Sartaroshni tanlang',
         'string' => 'The :attribute must be greater than :value characters.',
     ],
     'gte' => [

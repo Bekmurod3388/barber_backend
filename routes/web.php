@@ -30,6 +30,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('bookings', App\Http\Controllers\BookingController::class);
     Route::resource('barber', App\Http\Controllers\BarberController::class);
     Route::resource('sertifikat', App\Http\Controllers\CertificateController::class);
+    Route::resource('contacts',\App\Http\Controllers\ContactController::class);
 
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

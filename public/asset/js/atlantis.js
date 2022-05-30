@@ -13,7 +13,7 @@ $(function () {
 });
 
 function layoutsColors(){
-	if($('.sidebar').is('[data-background-color]')) { 
+	if($('.sidebar').is('[data-background-color]')) {
 		$('html').addClass('sidebar-color');
 	} else {
 		$('html').removeClass('sidebar-color');
@@ -151,7 +151,7 @@ $(document).ready(function(){
 
 		$('.wrapper').mouseup(function(e)
 		{
-			var subject = $('.quick-sidebar'); 
+			var subject = $('.quick-sidebar');
 
 			if(e.target.className != subject.attr('class') && !subject.has(e.target).length)
 			{
@@ -236,7 +236,7 @@ $(document).ready(function(){
 			pageSidebarToggler.removeClass('toggled');
 			page_sidebar_open = 0;
 		});
-		
+
 		toggle_page_sidebar = true;
 	}
 
@@ -287,7 +287,7 @@ $(document).ready(function(){
 
 
 	//Chat Open
-	$('.messages-contact .user a').on('click', function(){
+	$('.messages-contacts .user a').on('click', function(){
 		$('.tab-chat').addClass('show-chat')
 	});
 
@@ -363,13 +363,13 @@ function changeContainer(){
 	}
 }
 
-$('#show-signup').on('click', function(){ 
+$('#show-signup').on('click', function(){
 	showSignUp = true;
 	showSignIn = false;
 	changeContainer();
 })
 
-$('#show-signin').on('click', function(){ 
+$('#show-signin').on('click', function(){
 	showSignUp = false;
 	showSignIn = true;
 	changeContainer();
