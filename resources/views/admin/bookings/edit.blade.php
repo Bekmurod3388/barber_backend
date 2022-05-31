@@ -21,28 +21,41 @@
                     @endif
 
 
-                    <form action="{{route('admin.bookings.update',$bookings->id)}}" method="POST" accept-charset="UTF-8">
+                    <form action="{{route('admin.bookings.update',$bookings->id)}}" method="POST" accept-charset="UTF-8"
+                          enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <div class="form-group">
                             <label for="header_ru">Client Name</label>
-                            <input type="text" name="client_name" value="{{$bookings->client_name}}" class="form-control" id="header_ru" placeholder="Services">
+                            <input type="text" name="client_name" value="{{$bookings->client_name}}"
+                                   class="form-control" id="header_ru" placeholder="Services">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Client Phone number</label>
-                            <input type="tel" name="client_phone_number" value="{{$bookings->client_phone_number}}" class="form-control" id="header_ru" placeholder="cost">
+                            <input type="tel" name="client_phone_number" value="{{$bookings->client_phone_number}}"
+                                   class="form-control" id="header_ru" placeholder="cost">
                         </div>
                         <div class="form-group">
-                            <select name="barber_id" required class="form-select form-control form-select-lg mb-3" aria-label=".form-select-lg example" id="building">
-                                <option value="0" selected> Sartarosh </option>
+                            <select name="barber_id" required class="form-select form-control form-select-lg mb-3"
+                                    aria-label=".form-select-lg example" id="building">
+                                <option value="{{$bookings->barber_id}}" selected> Sartarosh</option>
                                 @foreach($barbers as $barber)
-                                    <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                    @if( $barber->id != $bookings->barber_id)
+                                        <option value="{{$barber->id}}">{{$barber->barber_name}}</option>
+                                    @endif
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="header_ru">Date</label>
-                            <input type="date" name="time" value="{{$bookings->time}}" class="form-control" id="header_ru" placeholder="id">
+                            <label for="header_ru">Kuni</label>
+                            <input type="date" name="day" value="{{$bookings->day}}" class="form-control"
+                                   id="header_ru" placeholder="id">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="header_ru">Vaqti</label>
+                            <input type="time" min='09:00' max='21:00' name="start_time" value="{{ $bookings->start_time }}" class="form-control"
+                                   id="header_ru" placeholder="id">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>

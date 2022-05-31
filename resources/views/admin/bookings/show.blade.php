@@ -19,9 +19,14 @@
                             <td>{{$bookings->barber_id}}</td>
                         </tr>
                         <tr>
-                            <th>Vaqti</th>
-                            <td>{{$bookings->time}}</td>
+                            <th>Kuni</th>
+                            <td>{{$bookings->day}}</td>
                         </tr>
+                        <tr>
+                            <th>Vaqti</th>
+                            <td>{{$bookings->start_time}}</td>
+                        </tr>
+
                         <tr>
                             <th>Band qilingan vaqt</th>
                             <td>{{$bookings->created_at}}</td>

@@ -21,7 +21,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-         $bookings = Booking::all();
+         $bookings = Booking::orderBy('created_at','desc')->paginate(6);
          return view('admin.bookings.index',[
              'bookings'=>$bookings,
          ]);
@@ -49,14 +49,7 @@ class BookingController extends Controller
     public function store(BookingRequest $request)
     {
 
-        $booking = new Booking();
-        $booking->client_name = $request->client_name;
-        $booking->client_phone_number = $request->client_phone_number;
-        $booking->barber_id = $request->barber_id;
-        $booking->time = $request->time;
-
-        $booking->save();
-
+        Booking::create($request->all());
         return redirect(route('admin.bookings.index'));
 
     }
@@ -104,13 +97,11 @@ class BookingController extends Controller
     public function update(Request $request, $id )
     {
         $booking = Booking::find($id);
-
         $booking->client_name = $request->client_name;
         $booking->client_phone_number = $request->client_phone_number;
+        $booking->day = $request->day;
+        $booking->start_time = $request->start_time;
         $booking->barber_id = $request->barber_id;
-        $booking->time = $request->time;
-        $booking->save();
-
         return redirect(route('admin.bookings.index'));
     }
 

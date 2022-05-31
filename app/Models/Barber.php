@@ -15,4 +15,11 @@ class Barber extends Model
         'passport_number',
         'work_time',
     ];
+
+    public function  barberservices(){
+        return $this->hasMany(Services::class);
+    }
+    public function  barberbooking(){
+        return $this->hasMany(Booking::class);
+    }
 }

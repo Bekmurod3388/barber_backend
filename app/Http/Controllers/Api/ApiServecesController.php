@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ApiServecesRequest;
+use App\Http\Resources\ApiServecesResource;
 use App\Models\Services;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class ApiServecesController extends Controller
@@ -15,7 +18,7 @@ class ApiServecesController extends Controller
      */
     public function index()
     {
-        $services = Services::all();
+        $services = ApiServecesResource::collection(Services::all());
         return response()->json($services);
     }
 
@@ -27,7 +30,21 @@ class ApiServecesController extends Controller
      */
     public function store(Request $request)
     {
-        $serves = Services::create($request->all());
+
+        $data = new Services();
+        $data->services_name = $request->services_name;
+        $data->cost = $request->cost;
+        $data->barber_id = $request->barber_id;
+        $image = $request->photo;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->photo->move('photo', $imagename);
+        $data->photo = $imagename;
+
+        $data->save();
+
+        return new ApiServecesResource($data);
+
+
     }
 
     /**
@@ -38,8 +55,10 @@ class ApiServecesController extends Controller
      */
     public function show($id)
     {
-        $services = Services::findOrFail($id);
+
+        $services = new ApiServecesResource(Services::findorFail($id));
         return response()->json($services);
+
     }
 
     /**
@@ -49,9 +68,24 @@ class ApiServecesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ApiServecesResource $request, Services $services )
     {
-        //
+
+        $services->services_name=$request->services_name;
+        $services->cost=$request->cost;
+        $services->barber_id=$request->barber_id;
+
+        if ($request->photo != null) {
+            $image = $request->photo;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->photo->move('photo', $imagename);
+            $services->photo = $imagename;
+        }
+
+        $services->save();
+
+        return response()->json($services);
+
     }
 
     /**
@@ -60,8 +94,9 @@ class ApiServecesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Services $services)
     {
-        //
+        $services->delete();
+        return response(null, \Illuminate\Http\Response::HTTP_NO_CONTENT);
     }
 }

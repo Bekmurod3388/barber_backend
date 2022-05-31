@@ -25,12 +25,16 @@
                           enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="services">Services Name</label>
+                            <label for="services"> Services Nomi </label>
                             <input type="text" name="services_name" class="form-control" id="services" placeholder="Services Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="cost">Cost</label>
+                            <label for="cost"> Narxi </label>
                             <input type="number" name="cost" class="form-control" id="cost" placeholder="cost" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="cost"> Rasmi </label>
+                            <input type="file" name="photo" class="form-control" id="cost" placeholder="rasm" required >
                         </div>
 
                         <div class="form-group">

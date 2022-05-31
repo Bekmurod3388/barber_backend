@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('barber_id');
             $table->date('day');
             $table->time('start_time');
-            $table->time('end_time');
             $table->timestamps();
         });
     }

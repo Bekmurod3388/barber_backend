@@ -21,7 +21,7 @@
                     @endif
 
 
-                    <form action="{{route('admin.bookings.store')}}" method="POST" accept-charset="UTF-8">
+                    <form action="{{route('admin.bookings.store')}}" method="POST" accept-charset="UTF-8" >
                         @csrf
 
                         <div class="form-group">
@@ -51,11 +51,7 @@
 
                         <div class="form-group" >
                             <label for="header_ru"> Boshlash vaqti </label>
-                            <input type="time" name="start_time" class="form-control" id="start_time" placeholder="" value="{{old('time')}}">
-                        </div>
-                        <div class="form-group" >
-                            <label for="header_ru"> Tugash vaqti </label>
-                            <input type="time" name="end_time" class="form-control" id="end_time" placeholder="" value="{{old('time')}}">
+                            <input type="time" min='09:00' max='21:00' name="start_time" class="form-control" id="start_time" placeholder="" value="{{old('time')}}">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary" onclick="end()" >Saqlash</button>

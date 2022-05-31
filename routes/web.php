@@ -35,9 +35,4 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
-
-Route::resource('/api/serveces' ,   \App\Http\Controllers\Api\ApiServecesController::class );
 
