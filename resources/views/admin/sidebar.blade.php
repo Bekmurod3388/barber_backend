@@ -46,6 +46,12 @@
                         <p>Sertifikat</p>
                     </a>
                 </li>
+                <li class="nav-item {{  request()->routeIs('admin.contacts.index') ? 'active' : '' }}">
+                    <a href="{{route('admin.contacts.index')}}">
+                        <i class="fas fa-envelope"></i>
+                        <p>Xabarlar</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

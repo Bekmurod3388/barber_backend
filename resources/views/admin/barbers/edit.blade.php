@@ -26,30 +26,36 @@
                         @csrf
                         <div class="form-group">
                             <label for="header_ru">Sartarosh nomi</label>
-                            <input type="text" name="barber_name" value="{{$barbers->barber_name}}" class="form-control" id="header_ru" placeholder="Barber Name">
+                            <input type="text" name="barber_name" value="{{$barbers->barber_name}}" class="form-control"
+                                   id="header_ru" placeholder="Barber Name">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Telefon raqami </label>
-                            <input type="tel" name="barber_phone_number" value="{{$barbers->barber_phone_number}}" class="form-control" id="header_ru" placeholder="Barber Phone">
+                            <input type="tel" name="barber_phone_number" value="{{$barbers->barber_phone_number}}"
+                                   class="form-control" id="header_ru" placeholder="Barber Phone">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Manzili</label>
-                            <input type="text" name="barber_home_adress" value="{{$barbers->barber_home_adress}}" class="form-control" id="header_ru" placeholder="Hom Adress">
+                            <input type="text" name="barber_home_adress" value="{{$barbers->barber_home_adress}}"
+                                   class="form-control" id="header_ru" placeholder="Hom Adress">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Passport Seriyasi</label>
-                            <input type="taxt" name="passport_number" value="{{$barbers->passport_number}}" class="form-control" id="header_ru" placeholder="AA 0000000">
+                            <input type="taxt" name="passport_number" value="{{$barbers->passport_number}}"
+                                   class="form-control" id="header_ru" placeholder="AA 0000000">
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Kelish vaqti</label>
-                            <input type="time" min='09:00' max='22:00'  name="start_time" value="{{$barbers->start_time}}" class="form-control" id="start_time"  required >
+                            <input type="time" min='09:00' max='22:00' name="start_time"
+                                   value="{{$barbers->start_time}}" class="form-control" id="start_time" required>
                         </div>
                         <div class="form-group">
                             <label for="header_ru">Ketish vaqti</label>
-                            <input type="time" min='09:00' max='22:00'  name="end_time" value="{{$barbers->end_time}}" class="form-control" id="end_time" required >
+                            <input type="time" min='09:00' max='22:00' name="end_time" value="{{$barbers->end_time}}"
+                                   class="form-control" id="end_time" required>
                         </div>
 
-                        <button type="submit" id="alert" class="btn btn-primary" onclick="end()" > Saqlash</button>
+                        <button type="submit" id="alert" class="btn btn-primary" onclick="end()"> Saqlash</button>
                         <input type="reset" class="btn btn-danger" value="Tozalash">
 
                     </form>
@@ -65,8 +71,7 @@
         function end() {
             let min = $('#start_time').val();
             let max = $('#end_time').val();
-            // var min = document.getElementById("start_time").value;
-            // var max = document.getElementById("end_time").value;
+
             if (min > max) {
                 swal({
                     icon: 'error',
