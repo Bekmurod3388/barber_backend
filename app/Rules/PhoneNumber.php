@@ -40,6 +40,6 @@ class PhoneNumber implements Rule
      */
     public function message()
     {
-        return 'telefon raqami + bilan boshlanishi  kerak';
+        return 'telefon raqami + bilan boshlanishi faqat raqam kerak';
     }
 }

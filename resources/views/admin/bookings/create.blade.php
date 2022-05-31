@@ -46,12 +46,12 @@
 
                         <div class="form-group" >
                             <label for="header_ru">Sana</label>
-                            <input type="date" name="date" class="form-control" id="header_ru" placeholder="" value="{{old('date')}}">
+                            <input type="date" name="date" class="form-control" required id="header_ru" placeholder="" value="{{old('date')}}">
                         </div>
 
                         <div class="form-group" >
                             <label for="header_ru">Vaqti</label>
-                            <input type="time" name="time" class="form-control" id="header_ru" placeholder="" value="{{old('time')}}">
+                            <input type="time" name="time" class="form-control" required id="header_ru" placeholder="" value="{{old('time')}}">
                         </div>
 
                         <button type="submit" id="alert" class="btn btn-primary">Saqlash</button>
