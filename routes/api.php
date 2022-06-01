@@ -22,5 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::resource('/bookings' ,   \App\Http\Controllers\Api\ApiBookingController::class );
     Route::resource('/contacts' ,   \App\Http\Controllers\Api\ApiContactController::class );
     Route::resource('/barbers',\App\Http\Controllers\Api\ApiBarberController::class);
+    Route::resource('/videos',\App\Http\Controllers\Api\VideoController::class);
+    Route::resource('/photos',\App\Http\Controllers\Api\PhotoController::class);
+    Route::resource('/certificates',\App\Http\Controllers\Api\CertificateController::class);
 
 
