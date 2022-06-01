@@ -21,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::resource('/services' ,   \App\Http\Controllers\Api\ApiServecesController::class );
     Route::resource('/bookings' ,   \App\Http\Controllers\Api\ApiBookingController::class );
     Route::resource('/contacts' ,   \App\Http\Controllers\Api\ApiContactController::class );
+    Route::resource('/barbers',\App\Http\Controllers\Api\ApiBarberController::class);
 
 
