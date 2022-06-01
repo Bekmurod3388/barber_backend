@@ -48,7 +48,17 @@ class ServicesController extends Controller
             'barber_id' => 'required'
         ]);
 
-        Services::create($request->all());
+        $data = new Services();
+        $data->services_name = $request->services_name;
+        $data->cost = $request->cost;
+        $data->barber_id = $request->barber_id;
+
+        $image = $request->photo;
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $request->photo->move('photo', $imagename);
+        $data->photo = $imagename;
+
+        $data->save();
         return redirect()->route('admin.services.index');
     }
 
@@ -98,14 +108,21 @@ class ServicesController extends Controller
             'cost'=>'required',
             'barber_id'=>'required'
         ]);
-//        dd($request->);
-$services=Services::find($id);
-$services->services_name=$request->services_name;
-$services->cost=$request->cost;
-$services->barber_id=$request->barber_id;
-$services->save();
 
-//        $services->update($request->all());
+        $services=Services::find($id);
+        $services->services_name=$request->services_name;
+        $services->cost=$request->cost;
+        $services->barber_id=$request->barber_id;
+
+        if ($request->photo != null) {
+            $image = $request->photo;
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $request->photo->move('photo', $imagename);
+            $services->photo = $imagename;
+        }
+
+        $services->save();
+
         return  redirect(route('admin.services.index'));
     }
 

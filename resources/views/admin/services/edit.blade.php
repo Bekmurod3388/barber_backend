@@ -37,6 +37,17 @@
                                     <input type="text" name="cost" value="{{$services->cost}}" class="form-control"
                                            id="header_ru" placeholder="cost">
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="text text-primary" for="floatingInput"> Oldingi rasmn </label>
+                                    <img style="width: 200px; height: 200px;" src="/photo/{{$services->photo}}" alt="Bu rasm">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="text text-primary" for="floatingInput"> Yangi rasmni yuklang</label>
+                                    <input type="file" name="photo" class="form-control " id="floatingInput" >
+                                </div>
+
                                 <div class="form-group">
                                     <select name="barber_id" required
                                             class="form-select form-control form-select-lg mb-3"

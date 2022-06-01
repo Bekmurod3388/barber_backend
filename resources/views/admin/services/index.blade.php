@@ -23,6 +23,7 @@
                             <th class="" scope="col">Xizmat nomi</th>
                             <th class="" scope="col">Naxri</th>
                             <th class="w-25" scope="col">Sartarosh</th>
+                            <th class="w-25" scope="col">Rasmi</th>
 
                             <th class="w-25" scope="col">Amallar</th>
                         </tr>
@@ -36,7 +37,9 @@
                                         <td>{{$servic->services_name}}</td>
                                         <td>{{$servic->cost}}</td>
                                         <td>{{$barber->barber_name}}</td>
-
+                                        <td>
+                                            <img style="width: 100px; height: 100px;" src="/photo/{{$servic->photo}}" alt="Bu rasm">
+                                        </td>
                                         <td class="col-2">
                                             <form action="{{route('admin.services.destroy',$servic->id)}}"
                                                   method="POST">

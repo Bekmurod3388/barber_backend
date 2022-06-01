@@ -11,7 +11,7 @@
 {{--                                admin.bookings.index--}}
                                 <i class="fa fa-plus"></i>
                             </span>
-                           Mijoz qo'shish
+                            Mijoz qo'shish
                         </a>
                     </div>
                 </div>
@@ -23,6 +23,7 @@
                             <th class="" scope="col">#</th>
                             <th class="" scope="col">Mijoz ismi</th>
                             <th class="" scope="col">Sartarosh Id</th>
+                            <th class="" scope="col">Kuni</th>
                             <th class="" scope="col">Vaqti</th>
 
                             <th class="w-25" scope="col">Amallar</th>
@@ -34,7 +35,8 @@
                                 <th scope="row" class="col-1">{{$booking->id}}</th>
                                 <td>{{$booking->client_name}}</td>
                                 <td>{{$booking->barber_id}}</td>
-                                <td>{{$booking->time}}</td>
+                                <td>{{$booking->day}}</td>
+                                <td>{{$booking->start_time}}</td>
 
                                 <td class="col-2">
                                     <form action="{{route('admin.bookings.destroy',$booking->id)}}" method="POST">
@@ -71,13 +73,11 @@
                     <div class="container">
                         <div class="row justify-content-center">
 
-
-                            {{--                            @if ($posts->links())--}}
-                            {{--                                <div class="mt-4 p-4 box has-text-centered">--}}
-                            {{--                                    {{ $posts->links() }}--}}
-                            {{--                                </div>--}}
-                            {{--                            @endif--}}
-
+                            @if ($bookings->links())
+                                <div class="mt-4 p-4 box has-text-centered">
+                                    {{ $bookings->links() }}
+                                </div>
+                            @endif
 
                         </div>
                     </div>

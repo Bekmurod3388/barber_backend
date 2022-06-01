@@ -37,7 +37,6 @@ class BarberController extends Controller
         $data->barber_phone_number = $request->barber_phone_number;
         $data->barber_home_adress = $request->barber_home_adress;
         $data->passport_number = $request->passport_number;
-        $data->day = $request->day;
         $data->start_time = $request->start_time;
         $data->end_time = $request->end_time;
 
