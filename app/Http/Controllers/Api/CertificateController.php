@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ContactResource;
-use App\Models\ContactModel;
+use App\Http\Resources\CertificateResource;
+use App\Models\Certificate;
 use Illuminate\Http\Request;
 
-class ApiContactController extends Controller
+class CertificateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class ApiContactController extends Controller
      */
     public function index()
     {
-        $message = ContactResource::collection(ContactModel::all());
-        return response()->json($message);
-
+        $data = CertificateResource::collection(Certificate::all());
+        return response()->json($data);
     }
 
     /**
@@ -29,11 +28,7 @@ class ApiContactController extends Controller
      */
     public function store(Request $request)
     {
-
-        $contact = ContactModel::create($request->all());
-
-        return response("Xabar Jo`natildi");
-
+        //
     }
 
     /**
@@ -44,10 +39,8 @@ class ApiContactController extends Controller
      */
     public function show($id)
     {
-        $message = new ContactResource(ContactModel::findorFail($id));
-
-        return response()->json($message);
-
+        $data = new CertificateResource(Certificate::findorFail($id));
+        return response()->json($data);
     }
 
     /**
@@ -59,18 +52,7 @@ class ApiContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $message = ContactModel::find($id);
-
-        $message->name = $request->name;
-        $message->email = $request->email;
-        $message->title = $request->title;
-        $message->message = $request->message;
-
-        $message->save();
-
-        return response()->json($message);
-
+        //
     }
 
     /**
@@ -81,10 +63,6 @@ class ApiContactController extends Controller
      */
     public function destroy($id)
     {
-        $contactModel = ContactModel::find($id);
-        $contactModel->delete();
-
-        return response(null, \Illuminate\Http\Response::HTTP_NO_CONTENT);
-
+        //
     }
 }

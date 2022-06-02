@@ -13,7 +13,8 @@ class Barber extends Model
         'barber_phone_number',
         'barber_home_adress',
         'passport_number',
-        'work_time',
+        'start_time',
+        'end_time',
     ];
 
     public function  barberservices(){
