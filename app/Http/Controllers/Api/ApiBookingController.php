@@ -14,6 +14,27 @@ class ApiBookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function today(){
+        $today = date('Y-m-d');
+        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+        return response()->json($bookings);
+    }
+    public function tomorrow(){
+        $today = date('Y-m-d');
+        $today = strtotime($today);
+        $today = strtotime("+1 day", $today);
+        $today = date('Y-m-d', $today);
+        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+        return response()->json($bookings);
+    }
+    public function after_tomorrow(){
+        $today = date('Y-m-d');
+        $today = strtotime($today);
+        $today = strtotime("+2 day", $today);
+        $today = date('Y-m-d', $today);
+        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+        return response()->json($bookings);
+    }
     public function index()
     {
         $bookings = BookingResource::collection(Booking::all());
