@@ -34,6 +34,13 @@ class BarberController extends Controller
         $data = new Barber();
 
         $data->barber_name = $request->barber_name;
+        $data->barber_photo = $request->barber_photo;
+
+        $rasm = $request->barber_photo;
+        $rasmname = time().'.'.$rasm->getClientOriginalExtension();
+        $request->barber_photo->move('photo',$rasmname);
+        $data->barber_photo = $rasmname;
+
         $data->barber_phone_number = $request->barber_phone_number;
         $data->barber_home_adress = $request->barber_home_adress;
         $data->passport_number = $request->passport_number;
@@ -64,6 +71,14 @@ class BarberController extends Controller
         $data = Barber::find($id);
 
         $data->barber_name = $request->barber_name;
+
+        if ($request->hasFile('photo')) {
+            $rasm = $request->barber_photo;
+            $rasmname = time().'.'.$rasm->getClientOriginalExtension();
+            $request->barber_photo->move('photo',$rasmname);
+            $data->barber_photo = $rasmname;
+        }
+
         $data->barber_phone_number = $request->barber_phone_number;
         $data->barber_home_adress = $request->barber_home_adress;
         $data->passport_number = $request->passport_number;
