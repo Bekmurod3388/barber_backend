@@ -14,10 +14,11 @@ class PhotoResource extends JsonResource
      */
     public function toArray($request)
     {
+//        $d = "http://barber.amusoft.uz/photo/".(string)$this->url;
         return [
             'id' => $this->id,
             'name'=>$this->name,
-            'url'=>$this->url
+            'url'=>$this->url,
         ];
     }
 }

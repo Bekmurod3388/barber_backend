@@ -17,6 +17,7 @@ class PhotoController extends Controller
     public function index()
     {
         $data = PhotoResource::collection(Photo::all());
+
         return response()->json($data);
     }
 

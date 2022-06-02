@@ -20,6 +20,7 @@ class BarberResource extends JsonResource
             'barber_phone_number' => $this->barber_phone_number,
             'barber_home_adress' => $this->barber_home_adress,
             'start_time' => $this-> start_time,
+            'barber_photo' => $this-> barber_photo,
             'end_time' => $this-> end_time,
         ];
     }
