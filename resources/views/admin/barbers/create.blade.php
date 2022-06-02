@@ -21,7 +21,7 @@
                     @endif
 
 
-                    <form action="{{route('admin.barber.store')}}" method="POST" accept-charset="UTF-8">
+                    <form action="{{route('admin.barber.store')}}" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
                         @csrf
 
                         <div class="form-group">
@@ -46,6 +46,12 @@
                             <label for="barber_phone_number">Passport Seriyasi</label>
                             <input type="text" name="passport_number" value="{{old('passport_number')}}"
                                    class="form-control" id="cost" placeholder="AA 0000000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="barber_phone_number">Sartarosh Rasmi</label>
+                            <input type="file" name="barber_photo" value="{{old('barber_photo')}}"
+                                   class="form-control" id="cost"  required>
                         </div>
 
                         <div class="form-group">

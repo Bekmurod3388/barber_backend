@@ -23,6 +23,7 @@
                             <th class="" scope="col">#</th>
                             <th class="" scope="col"> Ismi </th>
                             <th class="" scope="col"> Telefon raqami </th>
+                            <th class="" scope="col"> Rasmi</th>
                             <th class="" scope="col"> Kelish vaqti </th>
                             <th class="" scope="col"> Ketish vaqti </th>
 
@@ -35,6 +36,7 @@
                                 <td class="col-1">{{($barbers->currentpage()-1)*($barbers->perpage())+$ind+1}}</td>
                                 <td>{{$barber->barber_name}}</td>
                                 <td>{{$barber->barber_phone_number}}</td>
+                                <td><img style="width: 150px; height: 150px;" src="/photo/{{$barber->barber_photo}}" alt=""></td>
                                 <td>{{$barber->start_time}}</td>
                                 <td>{{$barber->end_time}}</td>
 

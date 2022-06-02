@@ -44,6 +44,18 @@
                             <input type="taxt" name="passport_number" value="{{$barbers->passport_number}}"
                                    class="form-control" id="header_ru" placeholder="AA 0000000">
                         </div>
+
+                        <div class="form-group">
+                            <label for="header_ru">Oldingi rasm</label><br>
+                            <img style="width: 150px; height: 150px;" src="/photo/{{$barbers->barber_photo}}" alt="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="header_ru"> Rasm tanlang </label>
+                            <input type="file" name="barber_photo" class="form-control" id="header_ru" placeholder=" ">
+                        </div>
+
+
                         <div class="form-group">
                             <label for="header_ru">Kelish vaqti</label>
                             <input type="time" min='09:00' max='22:00' name="start_time"

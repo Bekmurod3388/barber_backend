@@ -13,6 +13,7 @@ class Barber extends Model
         'barber_phone_number',
         'barber_home_adress',
         'passport_number',
+        'barber_photo',
         'start_time',
         'end_time',
     ];

@@ -19,6 +19,10 @@
                             <td>{{$barbers->barber_phone_number}}</td>
                         </tr>
                         <tr>
+                            <th>Rasmi </th>
+                            <td><img style="width: 150px; height: 150px;" src="/photo/{{$barbers->barber_photo}}" alt=""></td>
+                        </tr>
+                        <tr>
                             <th>Manzili</th>
                             <td>{{$barbers->barber_home_adress}}</td>
                         </tr>
