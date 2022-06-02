@@ -45,13 +45,14 @@ class VidioController extends Controller
 
         $url = $request->url;
         $youtube = "https://www.youtube.com/embed/";
-
+        $zz="";
         for ( $i = strlen($url)-1; $i>0; $i-- ){
             if ($url[$i]=='/'){
                 break;
             }
-            $youtube.=$url[$i];
+            $zz=$url[$i].$zz;
         }
+        $youtube.=$zz;
 
         $data->url = $youtube;
         $data->save();
