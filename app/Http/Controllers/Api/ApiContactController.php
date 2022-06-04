@@ -32,7 +32,6 @@ class ApiContactController extends Controller
 
         $contact = ContactModel::create($request->all());
 
-        return response("Xabar Jo`natildi");
 
     }
 
