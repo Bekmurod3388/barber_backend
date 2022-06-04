@@ -14,27 +14,53 @@ class ApiBookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function today(){
-        $today = date('Y-m-d');
-        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
-        return response()->json($bookings);
-    }
-    public function tomorrow(){
+//
+//    public function today(){
+//        $today = date('Y-m-d');
+//        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+//        return response()->json($bookings);
+//    }
+//    public function tomorrow(){
+//        $today = date('Y-m-d');
+//        $today = strtotime($today);
+//        $today = strtotime("+1 day", $today);
+//        $today = date('Y-m-d', $today);
+//        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+//        return response()->json($bookings);
+//    }
+//    public function after_tomorrow(){
+//        $today = date('Y-m-d');
+//        $today = strtotime($today);
+//        $today = strtotime("+2 day", $today);
+//        $today = date('Y-m-d', $today);
+//        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+//        return response()->json($bookings);
+//    }
+//
+
+    public function days(){
         $today = date('Y-m-d');
         $today = strtotime($today);
-        $today = strtotime("+1 day", $today);
+        $tomorrow = strtotime("+1 day", $today);
+        $after_tomorrow = strtotime("+2 day", $today);
         $today = date('Y-m-d', $today);
-        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
-        return response()->json($bookings);
+        $tomorrow = date('Y-m-d', $tomorrow);
+        $after_tomorrow = date('Y-m-d', $after_tomorrow);
+
+        $bookings_today = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
+        $bookings_tomorrow = BookingResource::collection(Booking::where('day', $tomorrow)->orderby('start_time')->get());
+        $bookings_after_tomorrow = BookingResource::collection(Booking::where('day', $after_tomorrow)->orderby('start_time')->get());
+
+        $mas = [
+            'today'=>$bookings_today,
+            'tomorrow'=>$bookings_tomorrow,
+            'after_tomorrow'=>$bookings_after_tomorrow
+        ];
+
+        return response()->json($mas);
     }
-    public function after_tomorrow(){
-        $today = date('Y-m-d');
-        $today = strtotime($today);
-        $today = strtotime("+2 day", $today);
-        $today = date('Y-m-d', $today);
-        $bookings = BookingResource::collection(Booking::where('day', $today)->orderby('start_time')->get());
-        return response()->json($bookings);
-    }
+
+
     public function index()
     {
         $bookings = BookingResource::collection(Booking::all());
