@@ -31,6 +31,7 @@ Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(funct
     Route::resource('barber', App\Http\Controllers\BarberController::class);
     Route::resource('sertifikat', App\Http\Controllers\CertificateController::class);
     Route::resource('contacts',\App\Http\Controllers\ContactController::class);
+    Route::resource('users',\App\Http\Controllers\UserController::class);
 
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
